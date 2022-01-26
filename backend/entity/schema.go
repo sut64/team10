@@ -19,3 +19,8 @@ type Prename struct {
 	gorm.Model
 	Prename string
 }
+
+type Province struct {
+	gorm.Model
+	Province string
+}
