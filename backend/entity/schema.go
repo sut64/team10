@@ -14,3 +14,8 @@ type User struct {
 	Age       uint8
 	BirthDay  time.Time
 }
+
+type Prename struct {
+	gorm.Model
+	Prename string
+}
