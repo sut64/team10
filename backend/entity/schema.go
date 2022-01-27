@@ -51,3 +51,10 @@ type BloodType struct {
 	//1 BloodType เป็นเจ้าของได้หลาย Personnel_ID
 	Personnels []Personnel `gorm:"foreignKey:BloodTypeID"`
 }
+
+type JobTitle struct {
+	gorm.Model
+	Job string `gorm:"uniqueIndex"`
+	//1 JobTitle เป็นเจ้าของได้หลาย Personnel_ID
+	Personnels []Personnel `gorm:"foreignKey:JobTitleID"`
+}
