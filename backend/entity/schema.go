@@ -24,3 +24,11 @@ type Province struct {
 	gorm.Model
 	Province string
 }
+
+type Medicine struct {
+	gorm.Model
+	Medname     string
+	Description string
+	Quantity    string
+	Price       float64
+}
