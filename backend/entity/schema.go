@@ -32,10 +32,20 @@ type Medicine struct {
 	Quantity    string
 	Price       float64
 }
+
 type DrugAllergy struct {
 	gorm.Model
 	Name    string
 	Symptom string
+}
+
+type HistorySheet struct {
+	gorm.Model
+	Weight      float64
+	Height      float64
+	Temperature float64
+	PressureOn  uint
+	PressureLow uint
 }
 
 type Gender struct {
