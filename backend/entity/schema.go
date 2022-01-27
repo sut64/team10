@@ -32,5 +32,8 @@ type Medicine struct {
 	Quantity    string
 	Price       float64
 }
-
-
+type DrugAllergy struct {
+	gorm.Model
+	Name    string
+	Symptom string
+}
