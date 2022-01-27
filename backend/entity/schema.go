@@ -44,3 +44,10 @@ type Gender struct {
 	//1 Gender เป็นเจ้าของได้หลาย Personnel_ID
 	Personnels []Personnel `gorm:"foreignKey:GenderID"`
 }
+
+type BloodType struct {
+	gorm.Model
+	BloodType string `gorm:"uniqueIndex"`
+	//1 BloodType เป็นเจ้าของได้หลาย Personnel_ID
+	Personnels []Personnel `gorm:"foreignKey:BloodTypeID"`
+}
