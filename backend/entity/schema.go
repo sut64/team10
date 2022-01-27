@@ -58,3 +58,19 @@ type JobTitle struct {
 	//1 JobTitle เป็นเจ้าของได้หลาย Personnel_ID
 	Personnels []Personnel `gorm:"foreignKey:JobTitleID"`
 }
+
+type Personnel struct {
+	gorm.Model
+	Name        string
+	Personalid  string
+	BirthDay    time.Time
+	Tel         string
+	Address     string
+	Salary      int
+	GenderID    *uint
+	Gender      Gender `gorm:"references:id"`
+	BloodTypeID *uint
+	BloodType   BloodType `gorm:"references:id"`
+	JobTitleID  *uint
+	JobTitle    JobTitle `gorm:"references:id"`
+}
