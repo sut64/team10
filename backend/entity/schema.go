@@ -32,3 +32,10 @@ type Medicine struct {
 	Quantity    string
 	Price       float64
 }
+
+type Gender struct {
+	gorm.Model
+	Genders string `gorm:"uniqueIndex"`
+	//1 Gender เป็นเจ้าของได้หลาย Personnel_ID
+	Personnels []Personnel `gorm:"foreignKey:GenderID"`
+}
