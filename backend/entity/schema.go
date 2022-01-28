@@ -159,7 +159,7 @@ type Patientrecord struct {
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
-
+        TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientRecordID"`
 	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
 }
 
@@ -193,7 +193,7 @@ type Disease struct {
 }
 
 
-}
+
 
 type TreatmentRecord struct {
 
