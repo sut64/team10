@@ -116,6 +116,8 @@ type Personnel struct {
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
+
+	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
 }
 
 type Patientrecord struct {
@@ -157,6 +159,8 @@ type Patientrecord struct {
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
+
+	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
 }
 
 type Bill struct {
@@ -196,4 +200,23 @@ type TreatmentRecord struct {
 
 	DiseaseID *uint
 	Disease Disease  `gorm:"reference:id"`
+
+	Appointments []Appointment `gorm:"foreignKey:TreatmentRecordID"`
+}
+
+type Appointment struct {
+	gorm.Model
+	Appoint_ID   string
+	Room_number  uint
+	Date_appoint time.Time
+
+	PatientRecordID *uint
+	PatientRecord   PatientRecord `gorm:"references:id"`
+
+	PersonnelID *uint
+	Personnel   Personnel `gorm:"references:id"`
+
+	TreatmentRecordID *uint
+	TreatmentRecord   TreatmentRecord `gorm:"references:id"`
+
 }
