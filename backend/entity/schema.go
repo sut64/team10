@@ -51,6 +51,9 @@ type DrugAllergy struct {
 	gorm.Model
 	Name    string
 	Symptom string
+
+	//1 DrugAllergy เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:DrugAllergyID"`
 }
 
 type HistorySheet struct {
@@ -60,6 +63,18 @@ type HistorySheet struct {
 	Temperature float64
 	PressureOn  uint
 	PressureLow uint
+
+	//patientrecord_id ทำหน้าที่เป็น FK
+	PatientrecordID *uint
+	Patientrecord   Patientrecord `gorm:"references:id"`
+
+	//Personnel_id ทำหน้าที่เป็น FK
+	PersonnelID *uint
+	Personnel   Personnel `gorm:"references:id"`
+
+	//DrugAllergy_id ทำหน้าที่เป็น FK
+	DrugAllergyID *uint
+	DrugAllergy   DrugAllergy `gorm:"references:id"`
 }
 
 type Gender struct {
@@ -97,6 +112,9 @@ type Personnel struct {
 	BloodType   BloodType `gorm:"references:id"`
 	JobTitleID  *uint
 	JobTitle    JobTitle `gorm:"references:id"`
+
+	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
 }
 
 type Patientrecord struct {
@@ -136,6 +154,8 @@ type Patientrecord struct {
 
 	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
 
+	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
 }
 
 type Bill struct {
