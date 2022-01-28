@@ -68,4 +68,52 @@ func SetupDatabase() {
 		Tname: "X-ray",
 		Price: 500,
 	})
+
+	db.Model(&Gender{}).Create(&Gender{
+		Genders: "ชาย",
+	})
+	db.Model(&Gender{}).Create(&Gender{
+		Genders: "หญิง",
+	})
+
+	db.Model(&BloodType{}).Create(&BloodType{
+		BloodType: "A",
+	})
+	db.Model(&BloodType{}).Create(&BloodType{
+		BloodType: "B",
+	})
+	db.Model(&BloodType{}).Create(&BloodType{
+		BloodType: "AB",
+	})
+	db.Model(&BloodType{}).Create(&BloodType{
+		BloodType: "O",
+	})
+
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "หมอ",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "พยาบาล",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "ผู้ช่วยพยาบาล",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "ทันตแพทย์",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "เภสัชกร",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "เทคนิคการแพทย์",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "พนักงานบัญชี",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "ภารโรง",
+	})
+	db.Model(&JobTitle{}).Create(&JobTitle{
+		Job: "รปภ.",
+	})
 }
