@@ -33,6 +33,13 @@ type Medicine struct {
 	Price       float64
 }
 
+type MedicalTreatment struct {
+	gorm.Model
+	Tname string
+	Price float64
+
+}
+
 type DrugAllergy struct {
 	gorm.Model
 	Name    string
