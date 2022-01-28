@@ -160,7 +160,7 @@ type Patientrecord struct {
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
 
-	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
+	Appointments []Appointment `gorm:"foreignKey:PatientrecordID"`
 }
 
 type Bill struct {
@@ -205,8 +205,8 @@ type TreatmentRecord struct {
 	PersonnelID *uint
 	Personnel Personnel `gorm:"reference:id"`
 	
-	PatientRecordID *uint
-	PatientRecord PatientRecord `gorm:"reference:id"`
+	PatientrecordID *uint
+	Patientrecord Patientrecord `gorm:"reference:id"`
 
 	MedicineID *uint
 	Medicine Medicine `gorm:"reference:id"`
@@ -223,8 +223,8 @@ type Appointment struct {
 	Room_number  uint
 	Date_appoint time.Time
 
-	PatientRecordID *uint
-	PatientRecord   PatientRecord `gorm:"references:id"`
+	PatientrecordID *uint
+	Patientrecord   Patientrecord `gorm:"references:id"`
 
 	PersonnelID *uint
 	Personnel   Personnel `gorm:"references:id"`
