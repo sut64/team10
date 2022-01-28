@@ -2,9 +2,9 @@ package controller
 
 import (
 	"net/http"
+	"github.com/sut64/team10/entity"
 
 	"github.com/gin-gonic/gin"
-	"github.com/sirichai10/se-64-01/entity"
 )
 
 // POST /appointment

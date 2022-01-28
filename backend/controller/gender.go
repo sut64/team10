@@ -2,9 +2,9 @@ package controller
 
 import (
 	"net/http"
+	"github.com/sut64/team10/entity"
 
 	"github.com/gin-gonic/gin"
-	"github.com/promiseZy/personnel/entity"
 )
 
 func ListGender(c *gin.Context) {
