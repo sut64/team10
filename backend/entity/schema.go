@@ -18,11 +18,15 @@ type User struct {
 type Prename struct {
 	gorm.Model
 	Prename string
+	//1 Prename เป็นเจ้าของได้หลาย patientrecord_ID
+	Patientrecord []Patientrecord `gorm:"foreignKey:PrenameID"`
 }
 
 type Province struct {
 	gorm.Model
 	Province string
+	//1 Province เป็นเจ้าของได้หลาย patientrecord_ID
+	Patientrecord []Patientrecord `gorm:"foreignKey:ProvinceID"`
 }
 
 type Medicine struct {
@@ -37,7 +41,6 @@ type MedicalTreatment struct {
 	gorm.Model
 	Tname string
 	Price float64
-
 }
 
 type DrugAllergy struct {
@@ -90,4 +93,40 @@ type Personnel struct {
 	BloodType   BloodType `gorm:"references:id"`
 	JobTitleID  *uint
 	JobTitle    JobTitle `gorm:"references:id"`
+}
+
+type Patientrecord struct {
+	gorm.Model
+
+	Firstname      string
+	Lastname       string
+	Idcardnumber   string
+	Age            uint8
+	Birthday       time.Time
+	Phonenumber    string
+	Email          string
+	Home           string
+	Emergencyname  string
+	Emergencyphone string
+	Timestamp      time.Time
+
+	//prename_id ทำหน้าที่เป็น FK
+	PrenameID *uint
+	Prename   Prename `gorm:"references:id"`
+
+	//gender_id ทำหน้าที่เป็น FK
+	GenderID *uint
+	Gender   Gender `gorm:"references:id"`
+
+	//bloodtype_id ทำหน้าที่เป็น FK
+	BloodtypeID *uint
+	Bloodtype   BloodType `gorm:"references:id"`
+
+	//province_id ทำหน้าที่เป็น FK
+	ProvinceID *uint
+	Province   Province `gorm:"references:id"`
+
+	//personnel_id ทำหน้าที่เป็น FK
+	PersonnelID *uint
+	Personnel   Personnel `gorm:"references:id"`
 }
