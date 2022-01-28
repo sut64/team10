@@ -16,6 +16,49 @@ func main() {
 	r.POST("/users", controller.CreateUser)
 	r.PATCH("/users", controller.UpdateUser)
 	r.DELETE("/users/:id", controller.DeleteUser)
+
+	// BloodType Routes of Patientrecord
+	r.GET("/bloodtypes", controller.ListBloodType)
+	r.GET("/bloodtype/:id", controller.GetBloodType)
+	r.POST("/bloodtypes", controller.CreateBloodType)
+	r.PATCH("/bloodtypes", controller.UpdateBloodType)
+	r.DELETE("/bloodtypes/:id", controller.DeleteBloodType)
+
+	// Gender Routes of Patientrecord
+	r.GET("/genders", controller.ListGender)
+	r.GET("/gender/:id", controller.GetGender)
+	r.POST("/genders", controller.CreateGender)
+	r.PATCH("/genders", controller.UpdateGender)
+	r.DELETE("/genders/:id", controller.DeleteGender)
+
+	// Personnel Routes of Patientrecord
+	r.GET("/personnels", controller.ListPersonnel)
+	r.GET("/personnel/:id", controller.GetPersonnel)
+	r.POST("/personnels", controller.CreatePersonnel)
+	r.PATCH("/personnels", controller.UpdatePersonnel)
+	r.DELETE("/personnels/:id", controller.DeletePersonnel)
+
+	// Prename Routes of Patientrecord
+	r.GET("/prenames", controller.ListPrenames)
+	r.GET("/prename/:id", controller.GetPrename)
+	r.POST("/prenames", controller.CreatePrename)
+	r.PATCH("/prenames", controller.UpdatePrename)
+	r.DELETE("/prenames/:id", controller.DeletePrename)
+
+	// Province Routes of Patientrecord
+	r.GET("/provinces", controller.ListProvinces)
+	r.GET("/province/:id", controller.GetProvince)
+	r.POST("/provinces", controller.CreateProvince)
+	r.PATCH("/provinces", controller.UpdateProvince)
+	r.DELETE("/provinces/:id", controller.DeleteProvince)
+
+	// Patientrecord Routes
+	r.GET("/patientrecords", controller.ListPatientrecords)
+	r.GET("/patientrecord/:id", controller.GetPatientrecord)
+	r.POST("/patientrecords", controller.CreatePatientrecord)
+	r.PATCH("/patientrecords", controller.UpdatePatientrecord)
+	r.DELETE("/patientrecords/:id", controller.DeletePatientrecord)
+
 	// Run the server
 	r.Run()
 }
