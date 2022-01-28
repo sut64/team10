@@ -59,6 +59,27 @@ func main() {
 	r.PATCH("/patientrecords", controller.UpdatePatientrecord)
 	r.DELETE("/patientrecords/:id", controller.DeletePatientrecord)
 
+	// Appointment Routes
+	r.GET("/appointments", controller.ListAppointments)         //list
+	r.GET("/appointment/:id", controller.GetAppointment)        //get
+	r.POST("/appointments", controller.CreateAppointment)       //create
+	r.PATCH("/appointments", controller.UpdateAppointment)      //update
+	r.DELETE("/appointments/:id", controller.DeleteAppointment) //delete
+
+	// DrugAllergy Routes
+	r.GET("/drugallergys", controller.ListDrugAllergys)
+	r.GET("/drugallergy/:id", controller.GetDrugAllergy)
+	r.POST("/drugallergys", controller.CreateDrugAllergy)
+	r.PATCH("/drugallergys", controller.UpdateDrugAllergy)
+	r.DELETE("/drugallergys/:id", controller.DeleteDrugAllergy)
+
+	// HistorySheet Routes
+	r.GET("/historysheets", controller.ListHistorySheets)
+	r.GET("/historysheet/:id", controller.GetHistorySheet)
+	r.POST("/historysheets", controller.CreateHistorySheet)
+	r.PATCH("/historysheets", controller.UpdateHistorySheet)
+	r.DELETE("/historysheets/:id", controller.DeleteHistorySheet)
+
 	// Run the server
 	r.Run()
 }
