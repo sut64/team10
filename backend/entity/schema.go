@@ -234,7 +234,16 @@ type Appointment struct {
 
 }
 
+type Medicine struct {
 
+	gorm.Model
+	MedName string
+	Description string
+
+	//1 Med เป็นเจ้าของได้หลาย TreatmentRecord_ID
+	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
+
+}
 
 
 
