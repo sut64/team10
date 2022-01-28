@@ -116,7 +116,7 @@ type Personnel struct {
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
-
+        TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PersonnelID"`
 	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
 }
 
