@@ -175,4 +175,25 @@ type Bill struct {
 
 	MedicalTreatmentID *uint
 	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
+
+}
+
+type TreatmentRecord struct {
+
+	gorm.Model
+	Treatment string 
+	Temperature float32
+	Date time.Time	
+	
+	PersonnelID *uint
+	Personnel Personnel `gorm:"reference:id"`
+	
+	PatientRecordID *uint
+	PatientRecord PatientRecord `gorm:"reference:id"`
+
+	MedicineID *uint
+	Medicine Medicine `gorm:"reference:id"`
+
+	DiseaseID *uint
+	Disease Disease  `gorm:"reference:id"`
 }
