@@ -21,7 +21,7 @@ import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 
 import { PrenamesInterface } from "../models/IPrename";
 import { GenderInterface } from "../models/IGender";
-import { BloodTypeInterface } from "../models/IBloodType";
+import { BloodTypeInterface } from "../models/IBloodtype";
 import { ProvincesInterface } from "../models/IProvince";
 import { PersonnelInterface } from "../models/IPersonnel";
 import { PatientrecordInterface } from "../models/IPatientrecord";
