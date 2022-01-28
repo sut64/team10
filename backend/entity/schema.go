@@ -155,3 +155,16 @@ type Bill struct {
 	MedicalTreatmentID *uint
 	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
 }
+
+
+type Disease struct {
+
+	gorm.Model
+	Diname string
+	Description string
+	
+	//1 Di เป็นเจ้าของได้หลาย TreatmentRecord_ID
+	TreatmentRecords []TreatmentRecord `gorm"foreignKey:DiseaseID"`
+}
+
+
