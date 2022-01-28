@@ -59,6 +59,13 @@ func main() {
 	r.PATCH("/patientrecords", controller.UpdatePatientrecord)
 	r.DELETE("/patientrecords/:id", controller.DeletePatientrecord)
 
+	// Appointment Routes
+	r.GET("/appointments", controller.ListAppointments)         //list
+	r.GET("/appointment/:id", controller.GetAppointment)        //get
+	r.POST("/appointments", controller.CreateAppointment)       //create
+	r.PATCH("/appointments", controller.UpdateAppointment)      //update
+	r.DELETE("/appointments/:id", controller.DeleteAppointment) //delete
+	
 	// Run the server
 	r.Run()
 }
