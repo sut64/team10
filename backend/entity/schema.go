@@ -51,6 +51,9 @@ type DrugAllergy struct {
 	gorm.Model
 	Name    string
 	Symptom string
+
+	//1 DrugAllergy เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:DrugAllergyID"`
 }
 
 type HistorySheet struct {
@@ -60,6 +63,19 @@ type HistorySheet struct {
 	Temperature float64
 	PressureOn  uint
 	PressureLow uint
+	Symptom     string
+
+	//patientrecord_id ทำหน้าที่เป็น FK
+	PatientrecordID *uint
+	Patientrecord   Patientrecord `gorm:"references:id"`
+
+	//Personnel_id ทำหน้าที่เป็น FK
+	PersonnelID *uint
+	Personnel   Personnel `gorm:"references:id"`
+
+	//DrugAllergy_id ทำหน้าที่เป็น FK
+	DrugAllergyID *uint
+	DrugAllergy   DrugAllergy `gorm:"references:id"`
 }
 
 type Gender struct {
@@ -97,6 +113,11 @@ type Personnel struct {
 	BloodType   BloodType `gorm:"references:id"`
 	JobTitleID  *uint
 	JobTitle    JobTitle `gorm:"references:id"`
+
+	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
+
+	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
 }
 
 type Patientrecord struct {
@@ -136,6 +157,10 @@ type Patientrecord struct {
 
 	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
 
+	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
+	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
+
+	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
 }
 
 type Bill struct {
@@ -154,8 +179,8 @@ type Bill struct {
 
 	MedicalTreatmentID *uint
 	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
-}
 
+}
 
 type Disease struct {
 
@@ -166,5 +191,51 @@ type Disease struct {
 	//1 Di เป็นเจ้าของได้หลาย TreatmentRecord_ID
 	TreatmentRecords []TreatmentRecord `gorm"foreignKey:DiseaseID"`
 }
+
+
+}
+
+type TreatmentRecord struct {
+
+	gorm.Model
+	Treatment string 
+	Temperature float32
+	Date time.Time	
+	
+	PersonnelID *uint
+	Personnel Personnel `gorm:"reference:id"`
+	
+	PatientRecordID *uint
+	PatientRecord PatientRecord `gorm:"reference:id"`
+
+	MedicineID *uint
+	Medicine Medicine `gorm:"reference:id"`
+
+	DiseaseID *uint
+	Disease Disease  `gorm:"reference:id"`
+
+	Appointments []Appointment `gorm:"foreignKey:TreatmentRecordID"`
+}
+
+type Appointment struct {
+	gorm.Model
+	Appoint_ID   string
+	Room_number  uint
+	Date_appoint time.Time
+
+	PatientRecordID *uint
+	PatientRecord   PatientRecord `gorm:"references:id"`
+
+	PersonnelID *uint
+	Personnel   Personnel `gorm:"references:id"`
+
+	TreatmentRecordID *uint
+	TreatmentRecord   TreatmentRecord `gorm:"references:id"`
+
+}
+
+
+
+
 
 
