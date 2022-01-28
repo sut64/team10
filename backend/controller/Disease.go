@@ -2,9 +2,9 @@ package controller
 
 import (
 
-	"github.com/Thanawat-Launakorn/treatment/entity"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"github.com/sut64/team10/entity"
 
 )
 
