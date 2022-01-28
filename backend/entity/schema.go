@@ -35,12 +35,16 @@ type Medicine struct {
 	Description string
 	Quantity    string
 	Price       float64
+
+	Bills []Bill `gorm:"foreignKey:MedicineID"`
 }
 
 type MedicalTreatment struct {
 	gorm.Model
 	Tname string
 	Price float64
+
+	Bills []Bill `gorm:"foreignKey:MedicalTreatmentID"`
 }
 
 type DrugAllergy struct {
@@ -129,4 +133,25 @@ type Patientrecord struct {
 	//personnel_id ทำหน้าที่เป็น FK
 	PersonnelID *uint
 	Personnel   Personnel `gorm:"references:id"`
+
+	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
+
+}
+
+type Bill struct {
+	gorm.Model
+	Cot        float64   `valid:"-"`
+	Com        float64   `valid:"-"`
+	Sum        float64   `valid:"positiveFloat,required~Sum must not Zero"`
+	Listofbill int       `valid:"positiveInt,required~List must not Zero"`
+	Dateofbill time.Time `valid:"future"`
+
+	PatientrecordID *uint
+	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
+
+	MedicineID *uint
+	Medicine   Medicine `gorm:"references:id" valid:"-"`
+
+	MedicalTreatmentID *uint
+	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
 }
