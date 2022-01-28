@@ -36,6 +36,7 @@ import Patientrecords from "./components/Patientrecords";
 import CreateBill from "./components/CreateBill";
 import Bill from "./components/Bill";
 import HistorySheets from "./components/HistorySheets";
+import CreateHistorySheet from "./components/CreateHistorySheet"
 
 const drawerWidth = 240;
 
