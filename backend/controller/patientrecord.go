@@ -3,7 +3,6 @@ package controller
 import (
 	"net/http"
 
-
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -25,7 +24,7 @@ func CreatePatientrecord(c *gin.Context) {
 	}
 
 	// 9: ค้นหา bloodtype ด้วย id
-	if tx := entity.DB().Where("id = ?", patientrecord.BloodtypeID).First(&bloodtype); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", patientrecord.BloodTypeID).First(&bloodtype); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "bloodtype not found"})
 		return
 	}
@@ -63,7 +62,7 @@ func CreatePatientrecord(c *gin.Context) {
 		Idcardnumber:   patientrecord.Idcardnumber,   // ตั้งค่าฟิลด์ Idcardnumber
 		Age:            patientrecord.Age,            // ตั้งค่าฟิลด์ Age
 		Birthday:       patientrecord.Birthday,       // ตั้งค่าฟิลด์ Birthday
-		Bloodtype:      bloodtype,                    // โยงความสัมพันธ์กับ Entity BloodType
+		BloodType:      bloodtype,                    // โยงความสัมพันธ์กับ Entity BloodType
 		Phonenumber:    patientrecord.Phonenumber,    // ตั้งค่าฟิลด์ Phonenumber
 		Email:          patientrecord.Email,          // ตั้งค่าฟิลด์ Email
 		Home:           patientrecord.Home,           // ตั้งค่าฟิลด์ Home
