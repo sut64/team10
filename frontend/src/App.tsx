@@ -24,10 +24,13 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import LibraryBookIcon from "@material-ui/icons/LibraryBooks";
 
 import Home from "./components/Home";
 import CreatePersonnel from "./components/CreatePersonnel";
 import Personnel from "./components/Personnel";
+import PatientrecordCreate from "./components/PatientrecordCreate";
+import Patientrecords from "./components/Patientrecords";
 
 const drawerWidth = 240;
 
@@ -111,6 +114,7 @@ export default function MiniDrawer() {
   const menu = [
     { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
     { name: "ข้อมูลบุคคลากร", icon: <AccountCircleIcon />, path: "/personnel" },
+    { name: "ลงทะเบียนคนไข้", icon: <LibraryBookIcon />, path: "/patientrecord/create" },
   ];
 
   return (
@@ -186,6 +190,8 @@ export default function MiniDrawer() {
                 component={CreatePersonnel} 
               />
               <Route component={Home} path="/" />
+              <Route exact path="/patientrecord/create" component={PatientrecordCreate} />
+              <Route exact path="/patientrecords" component={Patientrecords} />
             </Switch>
           </div>
         </main>
