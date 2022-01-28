@@ -63,6 +63,7 @@ type HistorySheet struct {
 	Temperature float64
 	PressureOn  uint
 	PressureLow uint
+	Symptom     string
 
 	//patientrecord_id ทำหน้าที่เป็น FK
 	PatientrecordID *uint
