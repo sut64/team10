@@ -43,7 +43,7 @@ type Medicine struct {
 type MedicalTreatment struct {
 	gorm.Model
 	Tname string
-	Price float64
+	Price float32
 
 	Bills []Bill `gorm:"foreignKey:MedicalTreatmentID"`
 }
@@ -54,7 +54,7 @@ type DrugAllergy struct {
 	Symptom string
 
 	//1 DrugAllergy เป็นเจ้าของได้หลาย HistorySheet_ID
-	HistorySheet []HistorySheet `gorm:"foreignKey:DrugAllergyID"`
+	HistorySheets []HistorySheet `gorm:"foreignKey:DrugAllergyID"`
 }
 
 type HistorySheet struct {
@@ -108,15 +108,18 @@ type Personnel struct {
 	Tel         string
 	Address     string
 	Salary      int
+
 	GenderID    *uint
 	Gender      Gender `gorm:"references:id"`
+	
 	BloodTypeID *uint
 	BloodType   BloodType `gorm:"references:id"`
+	
 	JobTitleID  *uint
 	JobTitle    JobTitle `gorm:"references:id"`
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
-	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
+	HistorySheets []HistorySheet `gorm:"foreignKey:PersonnelID"`
     TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PersonnelID"`
 	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
 }
@@ -156,31 +159,31 @@ type Patientrecord struct {
 	PersonnelID *uint
 	Personnel   Personnel `gorm:"references:id"`
 
-	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
-	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
-    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientRecordID"`
-	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
+	HistorySheets []HistorySheet `gorm:"foreignKey:PatientrecordID"`
+    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientrecordID"`
+	Appointments []Appointment `gorm:"foreignKey:PatientrecordID"`
+	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
   
 }
 
 type Bill struct {
 	gorm.Model
-	Cot        float64   `valid:"-"`
-	Com        float64   `valid:"-"`
-	Sum        float64   `valid:"positiveFloat,required~Sum must not Zero"`
-	Listofbill int       `valid:"positiveInt,required~List must not Zero"`
-	Dateofbill time.Time `valid:"future"`
+	Cot        float32   
+	Com        float32   
+	Sum        float32   
+	Listofbill int       
+	Dateofbill time.Time 
 
 	PatientrecordID *uint
-	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
+	Patientrecord   Patientrecord `gorm:"references:id"`
 
 	MedicineID *uint
-	Medicine   Medicine `gorm:"references:id" valid:"-"`
+	Medicine   Medicine `gorm:"references:id"`
 
 	MedicalTreatmentID *uint
-	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
+	MedicalTreatment   MedicalTreatment `gorm:"references:id"`
 
 }
 

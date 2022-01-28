@@ -3,8 +3,9 @@ package controller
 import (
 	"net/http"
 
-	"github.com/Thanawat-Launakorn/treatment/entity"
+
 	"github.com/gin-gonic/gin"
+	"github.com/sut64/team10/entity"
 )
 
 func CreateTreatment(c *gin.Context) {
@@ -13,7 +14,7 @@ func CreateTreatment(c *gin.Context) {
 	var disease entity.Disease
 	var medicine entity.Medicine
 	var personnel entity.Personnel
-	var patientrecord entity.PatientRecord
+	var patientrecord entity.Patientrecord
 
 	if err := c.ShouldBindJSON(&treatment); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -30,7 +31,7 @@ func CreateTreatment(c *gin.Context) {
 		return
 	}
 
-	if tx := entity.DB().Where("id = ? ", treatment.PatientRecordID).First(&patientrecord); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ? ", treatment.PatientrecordID).First(&patientrecord); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "patienrecord not found"})
 		return
 	}
@@ -44,7 +45,7 @@ func CreateTreatment(c *gin.Context) {
 		Disease:       disease,       // โยงความสัมพันธ์กับ Entity Disease
 		Medicine:      medicine,      // โยงความสัมพันธ์กับ Entity Medicine
 		Personnel:     personnel,     // โยงความสัมพันธ์กับ Entity Personnel
-		PatientRecord: patientrecord, // โยงความสัมพันธ์กับ Entity PatientRecord
+		Patientrecord: patientrecord, // โยงความสัมพันธ์กับ Entity PatientRecord
 
 		// field Treatment
 		Treatment:   treatment.Treatment,

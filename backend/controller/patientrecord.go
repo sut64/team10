@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 
+
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -11,7 +12,7 @@ import (
 func CreatePatientrecord(c *gin.Context) {
 
 	var patientrecord entity.Patientrecord
-	var bloodtype entity.Bloodtype
+	var bloodtype entity.BloodType
 	var gender entity.Gender
 	var personnel entity.Personnel
 	var prename entity.Prename
