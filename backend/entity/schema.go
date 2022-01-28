@@ -34,8 +34,8 @@ type Medicine struct {
 	Medname     string
 	Description string
 	Quantity    string
-	Price       float64
-
+	
+	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
 	Bills []Bill `gorm:"foreignKey:MedicineID"`
 }
 
@@ -234,16 +234,7 @@ type Appointment struct {
 
 }
 
-type Medicine struct {
 
-	gorm.Model
-	MedName string
-	Description string
-
-	//1 Med เป็นเจ้าของได้หลาย TreatmentRecord_ID
-	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
-
-}
 
 
 
