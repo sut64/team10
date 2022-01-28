@@ -34,8 +34,8 @@ type Medicine struct {
 	Medname     string
 	Description string
 	Quantity    string
-	Price       float64
-
+	
+	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
 	Bills []Bill `gorm:"foreignKey:MedicineID"`
 }
 
