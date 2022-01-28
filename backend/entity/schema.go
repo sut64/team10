@@ -34,10 +34,10 @@ type Medicine struct {
 	Medname     string
 	Description string
 	Quantity    string
-	Price 		float64
-	
-	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
-	Bills []Bill `gorm:"foreignKey:MedicineID"`
+	Price       float64
+
+	TreatmentRecords []TreatmentRecord `gorm"foreignKey:MedicineID"`
+	Bills            []Bill            `gorm:"foreignKey:MedicineID"`
 }
 
 type MedicalTreatment struct {
@@ -84,6 +84,8 @@ type Gender struct {
 	Genders string `gorm:"uniqueIndex"`
 	//1 Gender เป็นเจ้าของได้หลาย Personnel_ID
 	Personnels []Personnel `gorm:"foreignKey:GenderID"`
+
+	Patientrecord []Patientrecord `gorm:"foreignKey:GenderID"`
 }
 
 type BloodType struct {
@@ -91,6 +93,8 @@ type BloodType struct {
 	BloodType string `gorm:"uniqueIndex"`
 	//1 BloodType เป็นเจ้าของได้หลาย Personnel_ID
 	Personnels []Personnel `gorm:"foreignKey:BloodTypeID"`
+
+	Patientrecord []Patientrecord `gorm:"foreignKey:BloodTypeID"`
 }
 
 type JobTitle struct {
@@ -102,26 +106,26 @@ type JobTitle struct {
 
 type Personnel struct {
 	gorm.Model
-	Name        string
-	Personalid  string
-	BirthDay    time.Time
-	Tel         string
-	Address     string
-	Salary      int
+	Name       string
+	Personalid string
+	BirthDay   time.Time
+	Tel        string
+	Address    string
+	Salary     int
 
-	GenderID    *uint
-	Gender      Gender `gorm:"references:id"`
-	
+	GenderID *uint
+	Gender   Gender `gorm:"references:id"`
+
 	BloodTypeID *uint
 	BloodType   BloodType `gorm:"references:id"`
-	
-	JobTitleID  *uint
-	JobTitle    JobTitle `gorm:"references:id"`
+
+	JobTitleID *uint
+	JobTitle   JobTitle `gorm:"references:id"`
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
-	HistorySheets []HistorySheet `gorm:"foreignKey:PersonnelID"`
-    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PersonnelID"`
-	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
+	HistorySheets    []HistorySheet    `gorm:"foreignKey:PersonnelID"`
+	TreatmentRecords []TreatmentRecord `gorm"foreignKey:PersonnelID"`
+	Appointments     []Appointment     `gorm:"foreignKey:PersonnelID"`
 }
 
 type Patientrecord struct {
@@ -148,8 +152,8 @@ type Patientrecord struct {
 	Gender   Gender `gorm:"references:id"`
 
 	//bloodtype_id ทำหน้าที่เป็น FK
-	BloodtypeID *uint
-	Bloodtype   BloodType `gorm:"references:id"`
+	BloodTypeID *uint
+	BloodType   BloodType `gorm:"references:id"`
 
 	//province_id ทำหน้าที่เป็น FK
 	ProvinceID *uint
@@ -159,22 +163,20 @@ type Patientrecord struct {
 	PersonnelID *uint
 	Personnel   Personnel `gorm:"references:id"`
 
-
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
-	HistorySheets []HistorySheet `gorm:"foreignKey:PatientrecordID"`
-    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientrecordID"`
-	Appointments []Appointment `gorm:"foreignKey:PatientrecordID"`
-	Bills []Bill `gorm:"foreignKey:PatientrecordID"`
-  
+	HistorySheets    []HistorySheet    `gorm:"foreignKey:PatientrecordID"`
+	TreatmentRecords []TreatmentRecord `gorm"foreignKey:PatientrecordID"`
+	Appointments     []Appointment     `gorm:"foreignKey:PatientrecordID"`
+	Bills            []Bill            `gorm:"foreignKey:PatientrecordID"`
 }
 
 type Bill struct {
 	gorm.Model
-	Cot        float32   
-	Com        float32   
-	Sum        float32   
-	Listofbill int       
-	Dateofbill time.Time 
+	Cot        float32
+	Com        float32
+	Sum        float32
+	Listofbill int
+	Dateofbill time.Time
 
 	PatientrecordID *uint
 	Patientrecord   Patientrecord `gorm:"references:id"`
@@ -184,37 +186,34 @@ type Bill struct {
 
 	MedicalTreatmentID *uint
 	MedicalTreatment   MedicalTreatment `gorm:"references:id"`
-
 }
 
 type Disease struct {
-
 	gorm.Model
-	Diname string
+	Diname      string
 	Description string
-	
+
 	//1 Di เป็นเจ้าของได้หลาย TreatmentRecord_ID
 	TreatmentRecords []TreatmentRecord `gorm"foreignKey:DiseaseID"`
 }
 
 type TreatmentRecord struct {
-
 	gorm.Model
-	Treatment string 
+	Treatment   string
 	Temperature float32
-	Date time.Time	
-	
+	Date        time.Time
+
 	PersonnelID *uint
-	Personnel Personnel `gorm:"reference:id"`
-	
+	Personnel   Personnel `gorm:"reference:id"`
+
 	PatientrecordID *uint
-	Patientrecord Patientrecord `gorm:"reference:id"`
+	Patientrecord   Patientrecord `gorm:"reference:id"`
 
 	MedicineID *uint
-	Medicine Medicine `gorm:"reference:id"`
+	Medicine   Medicine `gorm:"reference:id"`
 
 	DiseaseID *uint
-	Disease Disease  `gorm:"reference:id"`
+	Disease   Disease `gorm:"reference:id"`
 
 	Appointments []Appointment `gorm:"foreignKey:TreatmentRecordID"`
 }
@@ -233,11 +232,4 @@ type Appointment struct {
 
 	TreatmentRecordID *uint
 	TreatmentRecord   TreatmentRecord `gorm:"references:id"`
-
 }
-
-
-
-
-
-

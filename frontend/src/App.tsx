@@ -201,9 +201,11 @@ export default function MiniDrawer() {
                 path="/personnel/create"
                 component={CreatePersonnel} 
               />
-              <Route component={Home} path="/" />
               <Route exact path="/patientrecord/create" component={PatientrecordCreate} />
               <Route exact path="/patientrecords" component={Patientrecords} />
+              
+              <Route component={Home} path="/" />
+              
             </Switch>
           </div>
         </main>

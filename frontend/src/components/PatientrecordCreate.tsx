@@ -241,7 +241,7 @@ function PatientrecordCreate() {
               color="primary"
               gutterBottom
             >
-              บันทึกการลงทะเบียนคนไข้
+              ลงทะเบียนคนไข้
             </Typography>
           </Box>
         </Box>
