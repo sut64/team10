@@ -34,6 +34,7 @@ type Medicine struct {
 	Medname     string
 	Description string
 	Quantity    string
+	Price 		float64
 	
 	TreatmentRecords []TreatmentRecord  `gorm"foreignKey:MedicineID"`
 	Bills []Bill `gorm:"foreignKey:MedicineID"`
@@ -116,7 +117,7 @@ type Personnel struct {
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PersonnelID"`
-        TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PersonnelID"`
+    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PersonnelID"`
 	Appointments []Appointment `gorm:"foreignKey:PersonnelID"`
 }
 
@@ -159,7 +160,7 @@ type Patientrecord struct {
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheet []HistorySheet `gorm:"foreignKey:PatientrecordID"`
-  TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientRecordID"`
+    TreatmentRecords []TreatmentRecord  `gorm"foreignKey:PatientRecordID"`
 	Appointments []Appointment `gorm:"foreignKey:PatientRecordID"`
   
 }
