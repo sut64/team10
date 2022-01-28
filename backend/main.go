@@ -114,7 +114,14 @@ func main() {
 	r.POST("/disease", controller.CreateDisease)
 	r.PATCH("/disease", controller.UpdateDisease)
 	r.DELETE("/disease/:id", controller.DeleteDisease)
-	
+
+	//jobtitle routes
+	r.GET("/jobtitle", controller.ListJobTitle)
+	r.GET("/jobtitle/:id", controller.GetJobTitle)
+	r.POST("/jobtitle", controller.CreateJobTitle)
+	r.PATCH("/jobtitle", controller.UpdateJobTitle)
+	r.DELETE("/jobtitle/:id", controller.DeleteJobTitle)
+
 	// Run the server
 	r.Run()
 }
