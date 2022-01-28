@@ -103,7 +103,7 @@ function CreateBill() {
   };
 
   const getRecord = async () => {
-    fetch(`${apiUrl}/patientrecord`, requestOptions)
+    fetch(`${apiUrl}/patientrecords`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
