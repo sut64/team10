@@ -1,6 +1,8 @@
 package entity
 
 import (
+	"time"
+
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -116,4 +118,87 @@ func SetupDatabase() {
 	db.Model(&JobTitle{}).Create(&JobTitle{
 		Job: "รปภ.",
 	})
+
+	// Prename Data
+	prename1 := Prename{
+		Prename: "นาย",
+	}
+	db.Model(&Prename{}).Create(&prename1)
+
+	prename2 := Prename{
+		Prename: "นาง",
+	}
+	db.Model(&Prename{}).Create(&prename2)
+
+	prename3 := Prename{
+		Prename: "นางสาว",
+	}
+	db.Model(&Prename{}).Create(&prename3)
+
+	// Province Data
+	province1 := Province{
+		Province: "นครราชสีมา",
+	}
+	db.Model(&Province{}).Create(&province1)
+
+	province2 := Province{
+		Province: "อุบลราชธานี",
+	}
+	db.Model(&Province{}).Create(&province2)
+
+	province3 := Province{
+		Province: "กรุงเทพ",
+	}
+	db.Model(&Province{}).Create(&province3)
+
+	// JobTitle Data
+	job1 := JobTitle{
+		Job: "พนักงานเวชระเบียน",
+	}
+	db.Model(&JobTitle{}).Create(&job1)
+
+	gender1 := Gender{
+		Genders: "ชาย",
+	}
+	db.Model(&Gender{}).Create(&gender1)
+
+	bloodtype2 := BloodType{
+		BloodType: "B",
+	}
+	db.Model(&BloodType{}).Create(&bloodtype2)
+
+	// Personnel Data
+	personnel1 := Personnel{
+		Name:       "ขยัน อดทด",
+		Personalid: "ABABAB",
+		BirthDay:   time.Now(),
+		Tel:        "0555555555555",
+		Address:    "1111",
+		Salary:     20,
+		Gender:     gender1,
+		BloodType:  bloodtype2,
+		JobTitle:   job1,
+	}
+	db.Model(&Personnel{}).Create(&personnel1)
+
+	// Patientrecord 1
+	db.Model(&Patientrecord{}).Create(&Patientrecord{
+		Prename:        prename1,
+		Firstname:      "นคร",
+		Lastname:       "ศรีสรรณ์",
+		Gender:         gender1,
+		Idcardnumber:   "1234455678948",
+		Age:            25,
+		Birthday:       time.Now(),
+		BloodType:      bloodtype2,
+		Phonenumber:    "0855555555",
+		Email:          "nakorn@test.com",
+		Home:           "111 moo1",
+		Province:       province1,
+		Emergencyname:  "มาสาย ลาก่อน",
+		Emergencyphone: "0111111111",
+		Timestamp:      time.Now(),
+		Personnel:      personnel1,
+	})
+
 }
