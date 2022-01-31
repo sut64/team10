@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -20,24 +20,24 @@ func CreateTreatment(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	
+	if tx := entity.DB().Where("id = ? ", treatment.PatientrecordID).First(&patientrecord); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "ไม่พบผู้ป่วย"})
+		return
+	}
 
 	if tx := entity.DB().Where("id = ? ", treatment.DiseaseID).First(&disease); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "disease not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "กรุณาระบุโรค"})
 		return
 	}
 
 	if tx := entity.DB().Where("id = ? ", treatment.MedicineID).First(&medicine); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "medicine not found"})
-		return
-	}
-
-	if tx := entity.DB().Where("id = ? ", treatment.PatientrecordID).First(&patientrecord); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "patienrecord not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "กรุณาระบุยา"})
 		return
 	}
 
 	if tx := entity.DB().Where("id = ? ", treatment.PersonnelID).First(&personnel); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "personnel not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "ไม่พบผู้ตรวจ"})
 		return
 	}
 
@@ -50,12 +50,19 @@ func CreateTreatment(c *gin.Context) {
 		// field Treatment
 		Treatment:   treatment.Treatment,
 		Temperature: treatment.Temperature,
-		Date:        treatment.Date,
+		RecordDate:        treatment.RecordDate,
 	}
+	
+	// validate ที่นำมาจาก unit test
+	if _, err := govalidator.ValidateStruct(tm); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// save
 	if err := entity.DB().Create(&tm).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
-
 	}
 	c.JSON(http.StatusOK, gin.H{"data": tm})
 
@@ -65,7 +72,7 @@ func GetTreatment(c *gin.Context) {
 
 	var treatment entity.TreatmentRecord
 	id := c.Param("id")
-	if err := entity.DB().Preload("Disease").Preload("Medicine").Preload("Personnel").Preload("PatientRecord").Raw("Select * FROM treatment_records WHERE id = ? ", id).Scan(&treatment).Error; err != nil {
+	if err := entity.DB().Preload("Disease").Preload("Medicine").Preload("Personnel").Preload("Patientrecord").Raw("Select * FROM treatment_records WHERE id = ? ", id).Scan(&treatment).Error; err != nil {
 
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 
@@ -81,7 +88,7 @@ func ListTreatment(c *gin.Context) {
 
 	var treatment []entity.TreatmentRecord
 
-	if err := entity.DB().Preload("Disease").Preload("Medicine").Preload("Personnel").Preload("PatientRecord").Raw("Select * FROM treatment_records ").Find(&treatment).Error; err != nil {
+	if err := entity.DB().Preload("Disease").Preload("Medicine").Preload("Personnel").Preload("Patientrecord").Raw("Select * FROM treatment_records ").Find(&treatment).Error; err != nil {
 
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -134,4 +141,3 @@ func UpdateTreatment(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": treatment})
 
 }
-
