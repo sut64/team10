@@ -42,6 +42,7 @@ func CreateAppointment(c *gin.Context) {
 		Personnel:       person,    // โยงความสัมพันธ์กับ Entity Personnel
 		Patientrecord:   patient,   // โยงความสัมพันธ์กับ Entity PatientRecord
 		TreatmentRecord: treatment, // โยงความสัมพันธ์กับ Entity TreatmentRecord
+		Appoint_ID:      appoint.Appoint_ID,
 		Room_number:     appoint.Room_number,
 		Date_appoint:    appoint.Date_appoint,
 	}
@@ -68,7 +69,7 @@ func GetAppointment(c *gin.Context) {
 // GET /appointments
 func ListAppointments(c *gin.Context) {
 	var appointments []entity.Appointment
-	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("TreatmentRecord").Find(&appointments).Error; err != nil {
+	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("TreatmentRecord").Raw("SELECT * FROM appointments").Find(&appointments).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
