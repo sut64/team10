@@ -27,6 +27,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import LibraryBookIcon from "@material-ui/icons/LibraryBooks";
 import BookIcon from "@material-ui/icons/Book";
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import TestIcon from '@material-ui/icons/AssignmentLate';
 
 import Home from "./components/Home";
 import CreatePersonnel from "./components/CreatePersonnel";
@@ -36,7 +37,9 @@ import Patientrecords from "./components/Patientrecords";
 import CreateBill from "./components/CreateBill";
 import Bill from "./components/Bill";
 import HistorySheets from "./components/HistorySheets";
-import CreateHistorySheet from "./components/CreateHistorySheet"
+import CreateHistorySheet from "./components/CreateHistorySheet";
+import CreateTreatmentRecord from "./components/CreateTreatmentRecord";
+import TreatmentRecord from "./components/TreatmentRecord";
 
 const drawerWidth = 240;
 
@@ -123,6 +126,7 @@ export default function MiniDrawer() {
     { name: "ลงทะเบียนคนไข้", icon: <LibraryBookIcon />, path: "/patientrecord/create" },
     { name: "รายการบิล", icon: <BookIcon />,path: "/Bill"},
     { name: "ซักประวัติ", icon: <AssignmentIcon />,path: "/CreateHistorySheet"},
+    { name: "บันทึกการรักษา", icon: <TestIcon />, path: "/CreateTreatmentRecord"},
   ];
 
   return (
@@ -203,6 +207,9 @@ export default function MiniDrawer() {
               />
               <Route exact path="/patientrecord/create" component={PatientrecordCreate} />
               <Route exact path="/patientrecords" component={Patientrecords} />
+              
+              <Route exact path="/CreateTreatmentRecord" component={CreateTreatmentRecord} />
+              <Route exact path="/TreatmentRecord" component={TreatmentRecord}/>
               
               <Route component={Home} path="/" />
               
