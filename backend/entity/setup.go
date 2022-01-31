@@ -39,6 +39,36 @@ func SetupDatabase() {
 		&Appointment{})
 	db = database
 
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "ไม่มี",
+		Description: "none",
+	})
+
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "ไข้หวัดใหญ่",
+		Description: "none",
+	})
+
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "ไข้เลือดออก",
+		Description: "none",
+	})
+
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "วัณโรค",
+		Description: "none",
+	})
+
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "โรคเบาหวาน",
+		Description: "none",
+	})
+
+	db.Model(&Disease{}).Create(&Disease{
+		Diname:      "โรคภูมิแพ้",
+		Description: "none",
+	})
+
 	db.Model(&Medicine{}).Create(&Medicine{
 		Medname:     "ไม่มี",
 		Description: "none",
@@ -179,8 +209,10 @@ func SetupDatabase() {
 		BloodType:  bloodtype2,
 		JobTitle:   job1,
 	}
+	
 	db.Model(&Personnel{}).Create(&personnel1)
 
+	
 	// Patientrecord 1
 	db.Model(&Patientrecord{}).Create(&Patientrecord{
 		Prename:        prename1,

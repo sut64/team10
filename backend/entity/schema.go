@@ -3,6 +3,7 @@ package entity
 import (
 	"time"
 
+	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
 )
 
@@ -199,21 +200,21 @@ type Disease struct {
 
 type TreatmentRecord struct {
 	gorm.Model
-	Treatment   string
-	Temperature float32
-	Date        time.Time
+	Treatment   string    `valid:"required~กรุณากรอกวิธีการรักษา"`
+	Temperature int       `valid:"positiveInt~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40" `
+	RecordDate  time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PersonnelID *uint
-	Personnel   Personnel `gorm:"reference:id"`
+	Personnel   Personnel `gorm:"reference:id" valid:"-"`
 
 	PatientrecordID *uint
-	Patientrecord   Patientrecord `gorm:"reference:id"`
+	Patientrecord   Patientrecord `gorm:"reference:id" valid:"-"`
 
 	MedicineID *uint
-	Medicine   Medicine `gorm:"reference:id"`
+	Medicine   Medicine `gorm:"reference:id" valid:"-"`
 
 	DiseaseID *uint
-	Disease   Disease `gorm:"reference:id"`
+	Disease   Disease `gorm:"reference:id" valid:"-"`
 
 	Appointments []Appointment `gorm:"foreignKey:TreatmentRecordID"`
 }
@@ -232,4 +233,21 @@ type Appointment struct {
 
 	TreatmentRecordID *uint
 	TreatmentRecord   TreatmentRecord `gorm:"references:id"`
+}
+
+func init() {
+	govalidator.CustomTypeTagMap.Set("past", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		return t.Before(time.Now())
+	})
+
+	govalidator.CustomTypeTagMap.Set("future", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		return t.After(time.Now())
+	})
+
+	govalidator.CustomTypeTagMap.Set("positiveInt", func(i interface{}, context interface{}) bool {
+		v, _ := i.(int)
+		return govalidator.InRangeInt(v, 32, 40)
+	})
 }
