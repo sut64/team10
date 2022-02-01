@@ -28,6 +28,7 @@ import LibraryBookIcon from "@material-ui/icons/LibraryBooks";
 import BookIcon from "@material-ui/icons/Book";
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import TestIcon from '@material-ui/icons/AssignmentLate';
+import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
 
 import Home from "./components/Home";
 import CreatePersonnel from "./components/CreatePersonnel";
@@ -40,6 +41,8 @@ import HistorySheets from "./components/HistorySheets";
 import CreateHistorySheet from "./components/CreateHistorySheet";
 import CreateTreatmentRecord from "./components/CreateTreatmentRecord";
 import TreatmentRecord from "./components/TreatmentRecord";
+import Appoints from "./components/Appoints";
+import AppointCreate from "./components/AppointCreate";
 
 const drawerWidth = 240;
 
@@ -127,6 +130,7 @@ export default function MiniDrawer() {
     { name: "รายการบิล", icon: <BookIcon />,path: "/Bill"},
     { name: "ซักประวัติ", icon: <AssignmentIcon />,path: "/CreateHistorySheet"},
     { name: "บันทึกการรักษา", icon: <TestIcon />, path: "/CreateTreatmentRecord"},
+    { name: "การนัดคนไข้", icon: <AccessAlarmsIcon />,path: "/AppointTable"},
   ];
 
   return (
@@ -210,7 +214,9 @@ export default function MiniDrawer() {
               
               <Route exact path="/CreateTreatmentRecord" component={CreateTreatmentRecord} />
               <Route exact path="/TreatmentRecord" component={TreatmentRecord}/>
-              
+	      <Route path="/AppointTable" element={<Appoints />} />
+              <Route path="/Appointcreate" element={<AppointCreate />} />              
+
               <Route component={Home} path="/" />
               
             </Switch>
