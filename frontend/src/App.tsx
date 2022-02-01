@@ -214,8 +214,9 @@ export default function MiniDrawer() {
               
               <Route exact path="/CreateTreatmentRecord" component={CreateTreatmentRecord} />
               <Route exact path="/TreatmentRecord" component={TreatmentRecord}/>
-	      <Route path="/AppointTable" element={<Appoints />} />
-              <Route path="/Appointcreate" element={<AppointCreate />} />              
+	      
+	      <Route exact path="/AppointTable" component={Appoints} />
+              <Route exact path="/Appointcreate" component={AppointCreate} />              
 
               <Route component={Home} path="/" />
               
