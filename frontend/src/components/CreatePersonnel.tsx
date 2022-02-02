@@ -131,7 +131,7 @@ function CreatePersonnel() {
 
 
   const getBloodType = async () => {
-    fetch(`${apiUrl}/bloodtype`, requestOptions)
+    fetch(`${apiUrl}/bloodtypes`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -143,7 +143,7 @@ function CreatePersonnel() {
   };
 
   const getGender = async () => {
-    fetch(`${apiUrl}/gender`, requestOptions)
+    fetch(`${apiUrl}/genders`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -201,7 +201,7 @@ function CreatePersonnel() {
       body: JSON.stringify(data),
     };
 
-    fetch(`${apiUrl}/personnel`, requestOptionsPost)
+    fetch(`${apiUrl}/personnels`, requestOptionsPost)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {

@@ -40,7 +40,7 @@ function Personnel() {
   };
 
   const getPersonnel = async () => {
-    fetch(`${apiUrl}/personnel`, requestOptions)
+    fetch(`${apiUrl}/personnels`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         console.log(res.data);
