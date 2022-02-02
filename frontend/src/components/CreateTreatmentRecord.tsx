@@ -30,10 +30,9 @@ import {
     KeyboardDatePicker
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
-import '../App.css';
 import image from "../image/pexels-pixabay-40568.jpg";
 import SendIcon from '@material-ui/icons/Save';
-
+import './style/CreateTreatmentRecord.css';
 
 
 const Alert = (props: AlertProps) => {
@@ -58,27 +57,13 @@ const useStyles = makeStyles((theme: Theme) =>
             marginTop: theme.spacing(4),
 
         },
-        paper: {
-            padding: theme.spacing(0),
-            height: '70vh',
-            color: "dark",
-            backgroundColor: 'transparent',
-
-
-
-        },
-        image: {
-            width: '35%',
-            height: '70vh',
-
-        },
 
         information: {
             width: '65%',
             height: '60vh',
             padding: theme.spacing(5),
             backgroundColor: '#fff',
-
+            borderRadius: '20px'
         },
 
         button: {
@@ -92,6 +77,10 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: 20,
             fontWeight: 900,
             color: theme.palette.common.black,
+        },
+
+        hide: {
+            margin: theme.spacing(3),
         }
 
 
@@ -263,11 +252,21 @@ function CreateTreatmentRecord() {
                     บันทึกข้อมูลไม่สำเร็จ: {errorMessage}
                 </Alert>
             </Snackbar>
-            <Paper className={classes.paper}>
+
+            <div className="paper">
                 <Box display="flex">
-                    <Box className={classes.image} >
-                        <img src={image} width={"100%"} height={"100%"} />
-                    </Box>
+                    <div className="box-image">
+                        <img className="img" src={image} />
+                        <div className="content_p">
+                            <div>
+                                <h2 className="h_content">ระบบจัดเก็บข้อมูลการรักษา</h2>
+                                <p className="text_content">
+                                  คือ ระบบที่จะบันทึกการรักษาและอาการของผู้ป่วย โดยจะให้ผู้ป่วยพบ
+                                    แพทย์เพื่อตรวจรักษา และแพทย์จะรวบรวมข้อมูลของผู้ป่วยนั้น บันทึกในระบบ โดยจะเก็บข้อมูล ข้อมูลผู้ป่วย
+                                    โรค วิธีการรักษา สั่งยา ผู้ตรวจ เพื่อจัดส่งข้อมูลนี้ให้กับแผนกที่เกี่ยวข้องต่อไป</p>
+                            </div>
+                        </div>
+                    </div>
                     <Box className={classes.information}>
                         <Box display="flex">
                             <Box flexGrow={1}>
@@ -276,8 +275,9 @@ function CreateTreatmentRecord() {
                                     variant="h5"
                                     color="inherit"
                                     gutterBottom
+                                    className={classes.hide}
                                 >
-                                    ระบบจัดเก็บข้อมูลการรักษา
+
                                 </Typography>
                                 <Divider />
                             </Box>
@@ -441,13 +441,7 @@ function CreateTreatmentRecord() {
                             </Button>
 
                             <Button
-                                style={{
-                                    float: "right",
-                                    position: 'relative',
-                                    left: '2.2rem'
-
-
-                                }}
+                                className="submit"
                                 startIcon={<SendIcon />}
                                 onClick={submit}
                                 variant="contained"
@@ -458,7 +452,7 @@ function CreateTreatmentRecord() {
                         </Grid>
                     </Box>
                 </Box>
-            </Paper>
+            </div>
         </Container>
 
     );

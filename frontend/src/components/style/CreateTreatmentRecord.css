@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Josefin+Sans&family=Kanit&display=swap');
+
+.box-image {
+    width: 35%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 0 0 20px;
+}
+
+.box-image .img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s;
+    position: absolute;
+}
+
+.box-image:hover .img {
+    transform: scale(1.1);
+
+}
+
+.paper {
+    background: transparent;
+    box-shadow: 1px 1px 3px 2px rgba(3, 3, 3, .1);
+    border-radius: 20px;
+}
+
+.box-image .content_p {
+    font-family: 'Chakra Petch', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    line-height: 2rem;
+    background: linear-gradient(rgba(15, 60, 184, 0.781), rgba(15, 60, 184, 0.781));
+    opacity: 0;
+    transition: all .5s ease-in-out;
+
+}
+
+.box-image:hover .content_p {
+    opacity: 1;
+    line-height: 2rem;
+
+}
+
+.text_content {
+    color: #fff;
+
+}
+
+.h_content {
+    color: #0b08aff8;
+}
+
+.submit {
+    float: right;
+    position: relative;
+    left: 2.2rem;
+}
