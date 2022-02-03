@@ -209,10 +209,9 @@ func SetupDatabase() {
 		BloodType:  bloodtype2,
 		JobTitle:   job1,
 	}
-	
+
 	db.Model(&Personnel{}).Create(&personnel1)
 
-	
 	// Patientrecord 1
 	db.Model(&Patientrecord{}).Create(&Patientrecord{
 		Prename:        prename1,
@@ -233,4 +232,20 @@ func SetupDatabase() {
 		Personnel:      personnel1,
 	})
 
+	// DrugAllergy Data
+	drugallergy1 := DrugAllergy{
+		Name:    "แอสไพริน",
+		Symptom: "หายใจลำบาก มีผื่นคัน",
+	}
+	db.Model(&DrugAllergy{}).Create(&drugallergy1)
+	drugallergy2 := DrugAllergy{
+		Name:    "เซรุ่มแก้พิษงู",
+		Symptom: "เกิดผื่นลมพิษ กล้ามเนื้ออ่อนแรง คลื่นไส้ ปวดหัว ตาพร่ามัว หายใจลำบาก",
+	}
+	db.Model(&DrugAllergy{}).Create(&drugallergy2)
+	drugallergy3 := DrugAllergy{
+		Name:    "ยาชา",
+		Symptom: "มีรอยช้ำ เลือดออก หรือเจ็บบริเวณที่ถูกฉีด",
+	}
+	db.Model(&DrugAllergy{}).Create(&drugallergy3)
 }
