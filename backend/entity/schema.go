@@ -177,7 +177,7 @@ type Bill struct {
 	Com        float32
 	Sum        float32
 	Listofbill int
-	Dateofbill time.Time
+	Dateofbill time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PatientrecordID *uint
 	Patientrecord   Patientrecord `gorm:"references:id"`
