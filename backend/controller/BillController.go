@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 	"github.com/sut64/team10/entity"
+	"github.com/asaskevich/govalidator"
 
 	"github.com/gin-gonic/gin"
 )
@@ -30,6 +31,12 @@ func CreateBill(c *gin.Context) {
 		Listofbill:    bill.Listofbill,
 		Dateofbill:    bill.Dateofbill,
 	}
+
+	if _, err := govalidator.ValidateStruct(bi); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
 
 	// 11: บันทึก
 	if err := entity.DB().Create(&bi).Error; err != nil {
