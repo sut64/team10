@@ -21,18 +21,18 @@ func CreateAppointment(c *gin.Context) {
 	}
 
 	// ค้นหา Personnel ด้วย id
-	if tx := entity.DB().Where("id = ?", appoint.PersonnelID).First(&appoint); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", appoint.PersonnelID).First(&person); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Personnel not found"})
 		return
 	}
 
 	// 9: ค้นหา Patientrecord ด้วย id
-	if tx := entity.DB().Where("id = ?", appoint.PatientrecordID).First(&appoint); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", appoint.PatientrecordID).First(&patient); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "PatientRecord not found"})
 		return
 	}
 	// 10: ค้นหา TreatmentRecord ด้วย id
-	if tx := entity.DB().Where("id = ?", appoint.TreatmentRecordID).First(&appoint); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", appoint.TreatmentRecordID).First(&treatment); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "TreatmentRecord not found"})
 		return
 	}
