@@ -65,12 +65,23 @@ function AppointCreate() {
  const handleDateChange = (date: Date | null) => {
    setSelectedDate(date);
  };
+
+const handleChange = (
+  event: React.ChangeEvent<{ name?: string; value: unknown }>
+) => {
+  const name = event.target.name as keyof typeof appoints;
+  setAppoints({
+    ...appoints,
+    [name]: event.target.value,
+  });
+};
  
  const handleInputChange = (
-  event: React.ChangeEvent<{ id?: string; value: unknown }>
+  event: React.ChangeEvent<{ id?: string; value: any }>
 ) => {
-  const id = event.target.id as keyof typeof appoints;
-  setAppoints({ ...appoints, [id]: event.target.value });
+  const id = event.target.id as keyof typeof AppointCreate;
+  const { value } = event.target
+  setAppoints({ ...appoints, [id]: value });
 };
 
  const getPersonnels = async () => {
@@ -134,7 +145,7 @@ const convertType = (data: string | number | undefined) => {
    const requestOptionsPost = {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      //Authorization: `Bearer ${localStorage.getItem("token")}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
@@ -202,7 +213,7 @@ const convertType = (data: string | number | undefined) => {
              <Select
                 native
                 value={appoints.PatientrecordID}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 inputProps={{
                   name: "PatientrecordID",
                 }}
@@ -225,7 +236,7 @@ const convertType = (data: string | number | undefined) => {
              <Select
                 native
                 value={appoints.TreatmentrecordID}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 inputProps={{
                   name: "TreatmentrecordID",
                 }}
@@ -248,7 +259,7 @@ const convertType = (data: string | number | undefined) => {
              <Select
                 native
                 value={appoints.PersonnelID}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 inputProps={{
                   name: "PersonnelID",
                 }}
@@ -272,7 +283,7 @@ const convertType = (data: string | number | undefined) => {
                variant="outlined"
                type="number"
                size="medium"
-               InputProps={{ inputProps: { min: 1 ,max:10} }}
+               InputProps={{ inputProps: { min: 1 } }}
                InputLabelProps={{
                  shrink: true,
                }}
