@@ -3,7 +3,6 @@ package controller
 import (
 	"net/http"
 
-
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -16,7 +15,7 @@ func CreateHistorySheet(c *gin.Context) {
 	var drugallergy entity.DrugAllergy
 	var personnel entity.Personnel
 
-	// ผลลัพธ์ที่ได้ ะถูก bind เข้าตัวแปร historysheet
+	// ผลลัพธ์ที่ได้ถูก bind เข้าตัวแปร historysheet
 	if err := c.ShouldBindJSON(&historysheet); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -29,7 +28,7 @@ func CreateHistorySheet(c *gin.Context) {
 	}
 
 	// ค้นหา patientrecord ด้วย id
-	if tx := entity.DB().Where("id = ?", historysheet.Patientrecord).First(&patientrecord); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", historysheet.PatientrecordID).First(&patientrecord); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "patientrecord not found"})
 		return
 	}
@@ -46,6 +45,7 @@ func CreateHistorySheet(c *gin.Context) {
 		DrugAllergy:   drugallergy,              // โยงความสัมพันธ์กับ Entity DrugAllergy
 		Weight:        historysheet.Weight,      // ตั้งค่าฟิลด์ Weight
 		Height:        historysheet.Height,      // ตั้งค่าฟิลด์ Height
+		Temperature:   historysheet.Temperature, // ตั้งค่าฟิลด์ Temperature
 		PressureOn:    historysheet.PressureOn,  // ตั้งค่าฟิลด์ PressureOn
 		PressureLow:   historysheet.PressureLow, // ตั้งค่าฟิลด์ PressureLow
 		Symptom:       historysheet.Symptom,     // ตั้งค่าฟิลด์ Symptom
@@ -101,7 +101,7 @@ func UpdateHistorySheet(c *gin.Context) {
 	}
 
 	if tx := entity.DB().Where("id = ?", historysheet.ID).First(&historysheet); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "historysheet not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "history sheet not found"})
 		return
 	}
 
