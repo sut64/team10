@@ -109,6 +109,9 @@ function Billlist() {
                 <TableCell align="center" width="15%">
                   ค่าใช้จ่ายทั้งหมด
                 </TableCell>
+                <TableCell align="center" width="15%">
+                  วันออกบิล
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -121,6 +124,7 @@ function Billlist() {
                   <TableCell align="center">{item.Com} บาท</TableCell>
                   <TableCell align="center">{item.Cot} บาท</TableCell>
                   <TableCell align="center">{item.Sum} บาท</TableCell>
+                  <TableCell align="center">{format((new Date(item.Dateofbill)), 'dd/MM/yy')}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
