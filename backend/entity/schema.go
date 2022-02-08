@@ -134,7 +134,7 @@ type Patientrecord struct {
 
 	Firstname      string
 	Lastname       string
-	Idcardnumber   string
+	Idcardnumber   string `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
 	Age            uint8
 	Birthday       time.Time
 	Phonenumber    string
@@ -146,23 +146,23 @@ type Patientrecord struct {
 
 	//prename_id ทำหน้าที่เป็น FK
 	PrenameID *uint
-	Prename   Prename `gorm:"references:id"`
+	Prename   Prename `gorm:"references:id" valid:"-"`
 
 	//gender_id ทำหน้าที่เป็น FK
 	GenderID *uint
-	Gender   Gender `gorm:"references:id"`
+	Gender   Gender `gorm:"references:id" valid:"-"`
 
 	//bloodtype_id ทำหน้าที่เป็น FK
 	BloodTypeID *uint
-	BloodType   BloodType `gorm:"references:id"`
+	BloodType   BloodType `gorm:"references:id" valid:"-"`
 
 	//province_id ทำหน้าที่เป็น FK
 	ProvinceID *uint
-	Province   Province `gorm:"references:id"`
+	Province   Province `gorm:"references:id" valid:"-"`
 
 	//personnel_id ทำหน้าที่เป็น FK
 	PersonnelID *uint
-	Personnel   Personnel `gorm:"references:id"`
+	Personnel   Personnel `gorm:"references:id" valid:"-"`
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheets    []HistorySheet    `gorm:"foreignKey:PatientrecordID"`
@@ -176,7 +176,7 @@ type Bill struct {
 	Cot        float32
 	Com        float32
 	Sum        float32   `valid:"positiveFloat,required~Sum must not Zero"`
-	Listofbill int	`valid:"intnotZero,required~List must not Zero"`
+	Listofbill int       `valid:"intnotZero,required~List must not Zero"`
 	Dateofbill time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PatientrecordID *uint
