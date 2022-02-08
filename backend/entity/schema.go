@@ -176,7 +176,7 @@ type Bill struct {
 	Cot        float32
 	Com        float32
 	Sum        float32
-	Listofbill int
+	Listofbill int	`valid:"intnotZero,required~List must not Zero"`
 	Dateofbill time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PatientrecordID *uint
@@ -249,5 +249,9 @@ func init() {
 	govalidator.CustomTypeTagMap.Set("positiveInt", func(i interface{}, context interface{}) bool {
 		v, _ := i.(int)
 		return govalidator.InRangeInt(v, 32, 40)
+	})
+	govalidator.CustomTypeTagMap.Set("intnotZero", func(i interface{}, context interface{}) bool {
+		v, _ := i.(int)
+		return govalidator.InRangeInt(v, 0, 999)
 	})
 }
