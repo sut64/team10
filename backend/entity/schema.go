@@ -135,7 +135,7 @@ type Patientrecord struct {
 	Firstname      string
 	Lastname       string
 	Idcardnumber   string `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
-	Age            uint8
+	Age            uint8  `valid:"range(0|120)~Age must be in range 0 - 120"`
 	Birthday       time.Time
 	Phonenumber    string
 	Email          string
