@@ -175,7 +175,7 @@ type Bill struct {
 	gorm.Model
 	Cot        float32
 	Com        float32
-	Sum        float32
+	Sum        float32   `valid:"positiveFloat,required~Sum must not Zero"`
 	Listofbill int	`valid:"intnotZero,required~List must not Zero"`
 	Dateofbill time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
@@ -252,6 +252,10 @@ func init() {
 	})
 	govalidator.CustomTypeTagMap.Set("intnotZero", func(i interface{}, context interface{}) bool {
 		v, _ := i.(int)
-		return govalidator.InRangeInt(v, 0, 999)
+		return govalidator.InRangeInt(v, 1, 999)
+	})
+	govalidator.CustomTypeTagMap.Set("positiveFloat", func(i interface{}, context interface{}) bool {
+		v, _ := i.(float32)
+		return govalidator.InRangeFloat32(v, 1.00, 9999.99)
 	})
 }
