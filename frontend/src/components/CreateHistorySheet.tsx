@@ -12,18 +12,12 @@ import Divider from "@material-ui/core/Divider";
 import Snackbar from "@material-ui/core/Snackbar";
 import Select from "@material-ui/core/Select";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+import { TextField } from "@material-ui/core";
 
 import { HistorySheetInterface } from "../models/IHistorySheet";
 import { DrugAllergyInterface } from "../models/IDrugAllergy";
 import { PatientrecordInterface } from "../models/IPatientrecord";
 import { PersonnelInterface } from "../models/IPersonnel";
-
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDateTimePicker,
-} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
-import { TextField } from "@material-ui/core";
 
 const Alert = (props: AlertProps) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -45,23 +39,19 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function HistorySheetCreate() {
- const classes = useStyles();
- const [selectedDate,       setSelectedDate]    = useState<Date | null>(new Date());
- const [personnels,         setPresonnel]       = useState<PersonnelInterface[]>([]);
- const [patientrecords,    setPatientrecord]  = useState<PatientrecordInterface[]>([]);
- const [drug_allergys,      setDrugAllergy]     = useState<DrugAllergyInterface[]>([]);
- const [history_sheets,     setHistorySheet]    = useState<Partial<HistorySheetInterface>>({});
- 
+  const classes = useStyles();
+  const [personnel,         setPresonnel]    = useState<PersonnelInterface[]>([]);
+  const [patientrecord,    setPatientrecord] = useState<PatientrecordInterface[]>([]);
+  const [drugallergy,      setDrugAllergy]   = useState<DrugAllergyInterface[]>([]);
+  const [historysheet,     setHistorySheet]  = useState<Partial<HistorySheetInterface>>({});
+
  const [success, setSuccess] = useState(false);
  const [error, setError] = useState(false);
 
  const apiUrl = "http://localhost:8080";
  const requestOptions = {
    method: "GET",
-   headers: {
-     Authorization: `Bearer ${localStorage.getItem("token")}`,
-     "Content-Type": "application/json",
-   },
+   headers: { "Content-Type": "application/json" },
  };
 
  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
@@ -71,79 +61,117 @@ function HistorySheetCreate() {
    setSuccess(false);
    setError(false);
  };
- const handleInputChange = (
-  event: React.ChangeEvent<{ id?: string; value: any }>
-  ) => {
-    const id = event.target.id as keyof typeof history_sheets;
-    const { value } = event.target;
-    setHistorySheet({ ...history_sheets, [id]: value });
-  };
+
 
  const handleChange = (
    event: React.ChangeEvent<{ name?: string; value: unknown }>
  ) => {
-   const name = event.target.name as keyof typeof history_sheets;
+   const name = event.target.name as keyof typeof historysheet;
    setHistorySheet({
-     ...history_sheets,
+     ...historysheet,
      [name]: event.target.value,
    });
  };
 
- const handleDateChange = (date: Date | null) => {
-   console.log(date);
-   setSelectedDate(date);
- };
+ const handleInputChangeWeight = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
+ const handleInputChangeHeight = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
+ const handleInputChangeTemperature = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
+ const handleInputChangePressureOn = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
+ const handleInputChangePressureLow = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
+ const handleInputChangeSymptom = (
+  event: React.ChangeEvent<{ id?: string; value: any }>
+  ) => {
+    const id = event.target.id as keyof typeof historysheet;
+    const { value } = event.target;
+    setHistorySheet({ ...historysheet, [id]: value });
+  };
 
- const getPersonnel = async () => {
-  fetch(`${apiUrl}/category`, requestOptions)
-    .then((response) => response.json())
-    .then((res) => {
-      if (res.data) {setPresonnel(res.data);} 
-      else {console.log("else");}
-    });
-  };  
-  const getPatientrecord = async () => {
-    fetch(`${apiUrl}/category`, requestOptions)
+  const getPersonnel = async () => {
+    fetch(`${apiUrl}/personnels`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
-        if (res.data) {setPatientrecord(res.data);} 
-        else {console.log("else");}
+        if (res.data) {
+          setPresonnel(res.data);
+        } else {
+          console.log("else");
+        }
+      });
+    };  
+    const getPatientrecord = async () => {
+      fetch(`${apiUrl}/patientrecords`, requestOptions)
+        .then((response) => response.json())
+        .then((res) => {
+          if (res.data) {
+            setPatientrecord(res.data);
+          } else {
+            console.log("else");
+          }
+        });
+      }; 
+   const getDrugAllergy = async () => {
+    fetch(`${apiUrl}/drugallergys`, requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.data) {
+          setDrugAllergy(res.data);
+        } else {
+          console.log("else");
+        }
       });
     }; 
- const getDrugAllergy = async () => {
-  fetch(`${apiUrl}/category`, requestOptions)
-    .then((response) => response.json())
-    .then((res) => {
-      if (res.data) {setDrugAllergy(res.data);} 
-      else {console.log("else");}
-    });
-  }; 
-   
-
- useEffect(() => {
-     getPersonnel();
-     getPatientrecord();
-     getDrugAllergy();
-  }, []);
-  
+    
+   useEffect(() => {
+       getPersonnel();
+       getPatientrecord();
+       getDrugAllergy();
+    }, []);
  const convertType = (data: string | number | undefined) => {
   let val = typeof data === "string" ? parseInt(data) : data;
   return val;
   };  
 
 function submit() {
-   let data = {
-     PersonnelID : convertType(history_sheets.PersonnelID),
-     PatientrecordID : convertType(history_sheets.PatientrecordID),
-     DrugAllergyID : convertType(history_sheets.DrugAllergyID),
-     Weight : history_sheets.Weight ?? "",
-     Height : history_sheets.Height ?? "",
-     PressureOn : history_sheets.PressureOn ?? "",
-     PressureLow : history_sheets.PressureLow ?? "",
-     Symptom : history_sheets.Symptom ?? "",
-   };
-
-   console.log(data)
+  let data = {
+    PersonnelID :      convertType(historysheet.PersonnelID),
+    PatientrecordID :  convertType(historysheet.PatientrecordID),
+    DrugAllergyID :    convertType(historysheet.DrugAllergyID),
+    Weight :           convertType(historysheet.Weight),
+    Height :           convertType(historysheet.Height),
+    Temperature :      convertType(historysheet.Temperature),
+    PressureOn :       convertType(historysheet.PressureOn),
+    PressureLow :      convertType(historysheet.PressureLow),
+    Symptom :          historysheet.Symptom,
+  };
 
    const requestOptionsPost = {
     method: "POST",
@@ -195,23 +223,47 @@ return (
        <Divider />
        <Grid container spacing={3} className={classes.root}>
          
+         
        <Grid item xs={6}>
             <FormControl fullWidth variant="outlined">
-              <p>Email</p>
+              <p>พยาบาล</p>
               <Select
                 native
-                value={history_sheets.PersonnelID}
+                value={historysheet.PersonnelID}
                 onChange={handleChange}
                 inputProps={{
                   name: "PersonnelID",
                 }}
               >
                 <option aria-label="None" value="">
-                  กรุณาเลือกชื่อคนไข้
+                  กรุณาระบุพยาบาลผู้ซักประวัติ
                 </option>
-                {patientrecords.map((item: PatientrecordInterface) => (
+                {personnel.map((item: PersonnelInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.Prename}
+                    {item.Name}
+                  </option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={6}>
+            <FormControl fullWidth variant="outlined">
+              <p>คนไข้</p>
+              <Select
+                native
+                value={historysheet.PatientrecordID}
+                onChange={handleChange}
+                inputProps={{
+                  name: "PatientrecordID",
+                }}
+              >
+                <option aria-label="None" value="">
+                  กรุณาระบุชื่อคนไข้
+                </option>
+                {patientrecord.map((item: PatientrecordInterface) => (
+                  <option value={item.ID} key={item.ID}>
+                    {item.Firstname} {item.Lastname}
                   </option>
                 ))}
               </Select>
@@ -223,16 +275,16 @@ return (
               <p>ยาที่แพ้</p>
               <Select
                 native
-                value={history_sheets.ID}
+                value={historysheet.DrugAllergyID}
                 onChange={handleChange}
                 inputProps={{
-                  name: "ID",
+                  name: "DrugAllergyID",
                 }}
               >
                 <option aria-label="None" value="">
-                  กรุณาเลือกยาที่แพ้
+                  กรุณาระบุยาที่แพ้
                 </option>
-                {drug_allergys.map((item: DrugAllergyInterface) => (
+                {drugallergy.map((item: DrugAllergyInterface) => (
                   <option value={item.ID} key={item.ID}>
                     {item.DName}
                   </option>
@@ -241,78 +293,101 @@ return (
             </FormControl>
           </Grid>
 
-         <Grid item xs={6}>
-           <FormControl fullWidth variant="outlined">
-              <p>น้ำหนัก</p>
-              <TextField            
-                id="weight"
-                variant="outlined"
-                type="float"
+          <Grid item xs={3}>
+            <p>น้ำหนัก</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="Weight"
+                variant ="outlined"
+                type="number"
                 size="medium"
-                value={history_sheets.Weight || ""}
-                onChange={handleInputChange}
+                placeholder="กรุณากรอกข้อมูลน้ำหนัก"
+                value={historysheet.Weight}
+                onChange={handleInputChangeWeight}
               />
             </FormControl>
           </Grid>
 
-          <Grid item xs={6}>
-           <FormControl fullWidth variant="outlined">
-              <p>ส่วนสูง</p>
-              <TextField            
-                id="height"
-                variant="outlined"
-                type="float"
+          <Grid item xs={3}>
+            <p>ส่วนสูง</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="Height"
+                variant ="outlined"
+                type="number"
                 size="medium"
-                value={history_sheets.Height || ""}
-                onChange={handleInputChange}
+                placeholder="กรุณากรอกข้อมูลส่วนสูง"
+                value={historysheet.Height}
+                onChange={handleInputChangeHeight}
               />
             </FormControl>
           </Grid>
 
-          <Grid item xs={6}>
-           <FormControl fullWidth variant="outlined">
-              <p>ความดันบน</p>
-              <TextField            
-                id="pressureon"
-                variant="outlined"
-                type="uint"
+          <Grid item xs={3}>
+            <p>อุณหภูมิ</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="Temperature"
+                variant ="outlined"
+                type="number"
                 size="medium"
-                value={history_sheets.PressureOn || ""}
-                onChange={handleInputChange}
+                placeholder="กรุณากรอกข้อมูลอุณหภูมิ"
+                value={historysheet.Temperature}
+                onChange={handleInputChangeTemperature}
               />
             </FormControl>
           </Grid>
 
-          <Grid item xs={6}>
-           <FormControl fullWidth variant="outlined">
-              <p>ความดันล่าง</p>
-              <TextField            
-                id="pressurelow"
-                variant="outlined"
-                type="uint"
+          <Grid item xs={3}>
+            <p>ความดันบน</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="PressureOn"
+                variant ="outlined"
+                type="number"
                 size="medium"
-                value={history_sheets.PressureLow || ""}
-                onChange={handleInputChange}
+                placeholder="กรุณากรอกข้อมูลความดันบน"
+                value={historysheet.PressureOn}
+                onChange={handleInputChangePressureOn}
               />
             </FormControl>
           </Grid>
 
-          <Grid item xs={6}>
-           <FormControl fullWidth variant="outlined">
-              <p>อาการเบื้องต้น</p>
-              <TextField            
-                id="symptom"
-                variant="outlined"
+          <Grid item xs={3}>
+            <p>ความดันล่าง</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="PressureLow"
+                variant ="outlined"
+                type="number"
+                size="medium"
+                placeholder="กรุณากรอกข้อมูลความดันล่าง"
+                value={historysheet.PressureLow}
+                onChange={handleInputChangePressureLow}
+              />
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={12}>
+            <p>อาการเบื้องต้น</p>
+            <FormControl fullWidth variant="outlined">
+              <TextField
+                id="Symptom"
+                variant ="outlined"
                 type="string"
                 size="medium"
-                value={history_sheets.Symptom || ""}
-                onChange={handleInputChange}
+                placeholder="กรุณากรอกข้อมูลอาการเบื้องต้น"
+                value={historysheet.Symptom}
+                onChange={handleInputChangeSymptom}
               />
             </FormControl>
           </Grid>
 
          <Grid item xs={12}>
-           <Button component={RouterLink} to="/historysheets" variant="contained">
+           <Button component={RouterLink} 
+           to="/historysheets" 
+           variant="contained"
+           >
              History Sheet Table
            </Button>
            <Button
