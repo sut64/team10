@@ -132,7 +132,7 @@ type Personnel struct {
 type Patientrecord struct {
 	gorm.Model
 
-	Firstname      string
+	Firstname      string `valid:"required~Firstname cannot be blank"`
 	Lastname       string
 	Idcardnumber   string `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
 	Age            uint8  `valid:"range(0|120)~Age must be in range 0 - 120"`
