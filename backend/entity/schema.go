@@ -108,7 +108,7 @@ type JobTitle struct {
 type Personnel struct {
 	gorm.Model
 	Name       string
-	Personalid string
+	Personalid string    `valid:"matches(^[0123456789]{13}$)~กรุณากรอกบัตรประจำตัวประชาชนให้ถูกต้อง"`
 	BirthDay   time.Time `valid:"past~กรุณากรอกวันเกิดให้ถูกต้อง"`
 	Tel        string
 	Address    string
