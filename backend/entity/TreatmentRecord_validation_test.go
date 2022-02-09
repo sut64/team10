@@ -69,3 +69,24 @@ func TestTreatmentRequire(t *testing.T) {
 	// err.Error ต้องมี error message แสดงออกมา
 	g.Expect(err.Error()).To(Equal("กรุณากรอกวิธีการรักษา"))
 }
+
+func TestTemperatureInRange(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	treatment := TreatmentRecord{
+		Treatment:   "วิธีการรักษา",
+		Temperature: 20,
+		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
+	}
+
+	ok, err := govalidator.ValidateStruct(treatment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40"))
+}
