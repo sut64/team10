@@ -112,7 +112,7 @@ type Personnel struct {
 	BirthDay   time.Time
 	Tel        string
 	Address    string
-	Salary     int
+	Salary     int `valid:"positiveIntSalaryForPersonnel~กรุณาเงินเดือนให้มีค่าเป็นบวก"`
 
 	GenderID *uint
 	Gender   Gender `gorm:"references:id"`
@@ -257,5 +257,9 @@ func init() {
 	govalidator.CustomTypeTagMap.Set("positiveFloat", func(i interface{}, context interface{}) bool {
 		v, _ := i.(float32)
 		return govalidator.InRangeFloat32(v, 1.00, 9999.99)
+	})
+	govalidator.CustomTypeTagMap.Set("positiveIntSalaryForPersonnel", func(i interface{}, context interface{}) bool {
+		v, _ := i.(int)
+		return govalidator.InRangeInt(v, 1, 1000000)
 	})
 }
