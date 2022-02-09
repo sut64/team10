@@ -109,7 +109,7 @@ type Personnel struct {
 	gorm.Model
 	Name       string
 	Personalid string
-	BirthDay   time.Time
+	BirthDay   time.Time `valid:"past~กรุณากรอกวันเกิดให้ถูกต้อง"`
 	Tel        string
 	Address    string
 	Salary     int `valid:"positiveIntSalaryForPersonnel~กรุณาเงินเดือนให้มีค่าเป็นบวก"`
