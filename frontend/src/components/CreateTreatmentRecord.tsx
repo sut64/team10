@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
 
         button: {
-            marginTop: theme.spacing(9),
+            marginTop: theme.spacing(6.5),
         },
 
         celsius: {
@@ -253,20 +253,28 @@ function CreateTreatmentRecord() {
                 </Alert>
             </Snackbar>
 
-            <div className="paper">
+            <Box className="paper">
                 <Box display="flex">
-                    <div className="box-image">
+                    <Box className="box-image">
                         <img className="img" src={image} />
-                        <div className="content_p">
-                            <div>
-                                <h2 className="h_content">ระบบจัดเก็บข้อมูลการรักษา</h2>
-                                <p className="text_content">
-                                  คือ ระบบที่จะบันทึกการรักษาและอาการของผู้ป่วย โดยจะให้ผู้ป่วยพบ
+                        <Box className="content_p">
+                            <Box>
+                                <Typography
+                                    component="h2"
+                                    variant="h4"
+                                    className="h_content"
+
+                                >
+                                    ระบบจัดเก็บข้อมูลการรักษา
+
+                                </Typography>
+                                <article className="text_content">
+                                    คือ ระบบที่จะบันทึกการรักษาและอาการของผู้ป่วย โดยจะให้ผู้ป่วยพบ
                                     แพทย์เพื่อตรวจรักษา และแพทย์จะรวบรวมข้อมูลของผู้ป่วยนั้น บันทึกในระบบ โดยจะเก็บข้อมูล ข้อมูลผู้ป่วย
-                                    โรค วิธีการรักษา สั่งยา ผู้ตรวจ เพื่อจัดส่งข้อมูลนี้ให้กับแผนกที่เกี่ยวข้องต่อไป</p>
-                            </div>
-                        </div>
-                    </div>
+                                    โรค วิธีการรักษา สั่งยา ผู้ตรวจ เพื่อจัดส่งข้อมูลนี้ให้กับแผนกที่เกี่ยวข้องต่อไป</article>
+                            </Box>
+                        </Box>
+                    </Box>
                     <Box className={classes.information}>
                         <Box display="flex">
                             <Box flexGrow={1}>
@@ -379,11 +387,15 @@ function CreateTreatmentRecord() {
 
                             <Grid item xs={12} className={classes.rowleap}>
                                 <p className={classes.label}>Treatment</p>
-                                <FormControl fullWidth variant="outlined">
+                                <FormControl fullWidth variant="outlined" >
+
                                     <TextField
+                                        multiline
+
+                                        rows={3}
                                         id="Treatment"
                                         type="string"
-                                        placeholder="กรุณากรอกวิธีการรักษา"
+                                        placeholder="กรุณากรอกวิธีการรักษา..."
                                         value={treatmentrecord.Treatment}
                                         onChange={handleInputChange}
 
@@ -452,7 +464,7 @@ function CreateTreatmentRecord() {
                         </Grid>
                     </Box>
                 </Box>
-            </div>
+            </Box>
         </Container>
 
     );

@@ -17,8 +17,8 @@
 }
 
 .box-image:hover .img {
-    transform: scale(1.1);
-
+    transform: scale(1.05);
+    
 }
 
 .paper {
@@ -43,7 +43,7 @@
     background: linear-gradient(rgba(15, 60, 184, 0.781), rgba(15, 60, 184, 0.781));
     opacity: 0;
     transition: all .5s ease-in-out;
-
+    
 }
 
 .box-image:hover .content_p {
@@ -54,11 +54,13 @@
 
 .text_content {
     color: #fff;
+    
 
 }
 
 .h_content {
-    color: #0b08aff8;
+    color: #fffffff8;
+    transform: translateY(-10px);
 }
 
 .submit {
