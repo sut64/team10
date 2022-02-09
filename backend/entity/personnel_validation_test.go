@@ -34,8 +34,8 @@ func TestPersonalIDMustBeInValidPattern(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	personnel := Personnel{
-		Name:       "Poramee",
-		Personalid: "11042002270934", // fail มีตัวอักษรที่นอกเหนือจาอก 0-9 อยู่ข้างใน
+		Name:       "Poramee Suriyajanno",
+		Personalid: "1104200227093",
 		BirthDay:   time.Date(2001, 8, 2, 0, 0, 0, 0, time.UTC),
 		Tel:        "0638267373",
 		Address:    "889 หมู่ 1 ต.ระแงง อ.ศีขรภูมิ จ.สุรินทร์ 32110",
@@ -59,13 +59,12 @@ func TestBirthDayMustBePast(t *testing.T) {
 
 	// ข้อมูลถูกต้องหมดทุก field
 	personnel := Personnel{
-		Name:       "Poramee",
+		Name:       "Poramee Suriyajanno",
 		Personalid: "1104200227093",
-		//BirthDay:   time.Date(2001, 8, 2, 0, 0, 0, 0, time.UTC),
-		BirthDay: time.Now().Add(24 * time.Hour), // อนาคต, fail
-		Tel:      "0638267373",
-		Address:  "889 หมู่ 1 ต.ระแงง อ.ศีขรภูมิ จ.สุรินทร์ 32110",
-		Salary:   15000,
+		BirthDay:   time.Date(2001, 8, 2, 0, 0, 0, 0, time.UTC),
+		Tel:        "0638267373",
+		Address:    "889 หมู่ 1 ต.ระแงง อ.ศีขรภูมิ จ.สุรินทร์ 32110",
+		Salary:     15000,
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -84,12 +83,12 @@ func TestBirthDayMustBePast(t *testing.T) {
 func TestSalaryMustBePositive(t *testing.T) {
 	g := NewGomegaWithT(t)
 	personnel := Personnel{
-		Name:       "Poramee",
+		Name:       "Poramee Suriyajanno",
 		Personalid: "1104200227093",
 		BirthDay:   time.Date(2001, 8, 2, 0, 0, 0, 0, time.UTC),
 		Tel:        "0638267373",
 		Address:    "889 หมู่ 1 ต.ระแงง อ.ศีขรภูมิ จ.สุรินทร์ 32110",
-		Salary:     -50,
+		Salary:     15000,
 	}
 
 	ok, err := govalidator.ValidateStruct(personnel)
