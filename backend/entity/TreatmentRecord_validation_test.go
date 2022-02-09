@@ -49,4 +49,23 @@ func TestDateMustBeFuture(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("ไม่สามารถบันทึกเป็นเวลาในอดีตได้"))
 }
 
+func TestTreatmentRequire(t *testing.T) {
+	g := NewGomegaWithT(t)
 
+	treatment := TreatmentRecord{
+		Treatment:   "",
+		Temperature: 32,
+		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
+	}
+
+	ok, err := govalidator.ValidateStruct(treatment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("กรุณากรอกวิธีการรักษา"))
+}
