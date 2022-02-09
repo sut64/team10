@@ -1,0 +1,942 @@
+{
+  "id": "d4b61b47-ebdf-493f-a4f1-73d8af132b7b",
+  "version": "2.0",
+  "name": "TreatmentRecord",
+  "url": "http://localhost:3000/CreateTreatmentRecord",
+  "tests": [{
+    "id": "66840490-d870-4d34-9e57-27e8ef450f18",
+    "name": "B6202897- บันทึกข้อมูล TreatmentRecord สำเร็จ",
+    "commands": [{
+      "id": "14b53505-51b9-4593-a817-cb4d144c1241",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/CreateTreatmentRecord",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61a1d1a9-3cde-4b0c-b8c1-58dd6081326c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f3be8de-d615-477e-bfe1-3346f39b3c8b",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.makeStyles-label-12 > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6dabace-a0c5-4a3e-89ed-8e3a69e3a0cf",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "c262645c-60d9-4a97-99f3-1042428e963e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "311a8784-b396-4000-ab27-7ec9a5ab1ef2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f86a28a-a915-47c2-afd3-54e96e621de3",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "1dcac776-3b7d-4773-8151-259465280743",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[5]/div/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6435b4f9-fb7e-4fc2-8eb6-db27b1932edd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[5]/div/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c1d82c5-93eb-4f62-a8a8-4d1a76c18b40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2)",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[14]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4862f36c-3f8d-4c54-b2ca-ac18d59cc2ca",
+      "comment": "",
+      "command": "click",
+      "target": "name=DiseaseID",
+      "targets": [
+        ["name=DiseaseID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='DiseaseID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a6a5279-01e5-491e-b074-8bc27ece33a5",
+      "comment": "",
+      "command": "select",
+      "target": "name=DiseaseID",
+      "targets": [],
+      "value": "label=ไข้เลือดออก"
+    }, {
+      "id": "4aee80df-7c03-4b61-9b15-9f5ade17831d",
+      "comment": "",
+      "command": "click",
+      "target": "name=MedicineID",
+      "targets": [
+        ["name=MedicineID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='MedicineID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bf66761-65e6-44d0-aaf5-2d40fe673f93",
+      "comment": "",
+      "command": "select",
+      "target": "name=MedicineID",
+      "targets": [],
+      "value": "label=ไม่มี"
+    }, {
+      "id": "e1254672-6781-4345-b729-d888d2e062cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a3669de-2ebf-4fef-a1f0-9da5fbf2d1a4",
+      "comment": "",
+      "command": "type",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "821109c9-b594-4d81-96a4-270e37b03040",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[6]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57c3d7ce-ee5f-4614-a2e2-b34793ae69f4",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "87fa29f7-17d2-4260-8106-a6792667ce37",
+      "comment": "",
+      "command": "click",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5eb51e4-61c9-48f9-8550-acd6fd2cc7f6",
+      "comment": "",
+      "command": "type",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "e289dc98-9014-407c-aa55-798fe7cb7741",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df9bbf9d-fd96-4c83-a660-b6010bc5c60e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ec085db-2f53-4957-80d8-05549180653d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
+    }]
+  }, {
+    "id": "e27a812c-0a12-44cf-a0c3-b2155c2307cf",
+    "name": "B6202897- ข้อมูลที่กรอกวิธีการรักษา ต้องมีตัวอักษร",
+    "commands": [{
+      "id": "35814cac-cb05-4851-86cd-c813092a128f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/CreateTreatmentRecord",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "971b1a51-b437-4a67-9a8b-e81b74347825",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6d4b301-c707-4cc9-a876-593a267798f7",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.makeStyles-label-12 > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d76a08f-d454-4cb5-bbf0-6fb6a99ff4c9",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "75f01a40-e608-4ea2-aa9a-1ba60e4b293f",
+      "comment": "",
+      "command": "click",
+      "target": "name=DiseaseID",
+      "targets": [
+        ["name=DiseaseID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='DiseaseID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cd2c699-9528-4cfc-afdc-bd350fae5c1d",
+      "comment": "",
+      "command": "select",
+      "target": "name=DiseaseID",
+      "targets": [],
+      "value": "label=ไข้หวัดใหญ่"
+    }, {
+      "id": "6dfbea7b-21d0-4dd8-945a-a97d2b9f99fb",
+      "comment": "",
+      "command": "click",
+      "target": "name=MedicineID",
+      "targets": [
+        ["name=MedicineID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='MedicineID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6d70b22-f379-4cc6-9a12-08df576da889",
+      "comment": "",
+      "command": "select",
+      "target": "name=MedicineID",
+      "targets": [],
+      "value": "label=Omepazole"
+    }, {
+      "id": "ee815879-0b37-41b4-9bb5-4de0ee1fdb9a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c2f4c0a-1dbc-4a89-a2cc-3a9c634bdeda",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3f8df2e-19e4-49a0-8e5c-b932f6e0269f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0d559ee-26f0-4fa6-8586-1f6ba6b259f4",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[5]/div/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "08a1d53a-6eaa-446f-a19c-1cf54a5c6b0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[5]/div/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f488cd8c-6375-4117-8243-c8690fe9466c",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4de2b102-1c86-4666-bd11-1656cbaccadd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "11d4dc6e-61cc-4446-b87d-cf4c843f7c87",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[6]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "339d9dcc-b961-4780-98c0-4c3ef555dc3d",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "bda41133-8f89-45b6-85a9-19552877197d",
+      "comment": "",
+      "command": "click",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d532417c-4016-411d-bdd7-28b2acab8275",
+      "comment": "",
+      "command": "type",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "50d21aa4-5389-48cf-84bf-b364b0049f90",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "601d2618-b90d-41a4-a1a0-b54e3ccc2e67",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ce64051-eadb-49f3-8c13-154c4ab9f084",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: กรุณากรอกวิธีการรักษา"
+    }]
+  }, {
+    "id": "0ad12960-9f79-468d-97d0-01cb58bddfa0",
+    "name": "B6202897-วันที่ต้องไม่เป็นเวลาในอดีต",
+    "commands": [{
+      "id": "8539f18f-8928-47c1-b3a2-6d6298d9855a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/CreateTreatmentRecord",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2afdf44-aedb-459e-a16d-affc6176529c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7d98659-265a-46b6-9694-19d55ab7f807",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.makeStyles-label-12 > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00f23035-3488-48a0-9913-4580f3f2624b",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "78ca458a-d7c6-4a59-bd53-3e95c99cd4e2",
+      "comment": "",
+      "command": "click",
+      "target": "name=DiseaseID",
+      "targets": [
+        ["name=DiseaseID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='DiseaseID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31d65f34-ed40-432c-b744-1fbb9c5944b0",
+      "comment": "",
+      "command": "select",
+      "target": "name=DiseaseID",
+      "targets": [],
+      "value": "label=ไข้หวัดใหญ่"
+    }, {
+      "id": "c8910b8e-0dec-47ec-a0f6-f39becdec386",
+      "comment": "",
+      "command": "click",
+      "target": "name=MedicineID",
+      "targets": [
+        ["name=MedicineID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='MedicineID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3da29b6-e0c3-4481-b262-1823d27c3501",
+      "comment": "",
+      "command": "select",
+      "target": "name=MedicineID",
+      "targets": [],
+      "value": "label=Omepazole"
+    }, {
+      "id": "316fbd28-1e92-4677-ac03-364932beecaf",
+      "comment": "",
+      "command": "click",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8978b321-02a2-4e85-b299-359fe82cb6c7",
+      "comment": "",
+      "command": "type",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "ae574f0d-8bd6-472c-9f30-12314e0da6d2",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[6]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbcdd24b-a564-4d92-a30c-004d632751fe",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "70da3acf-cb88-4fa0-9ee3-c71d2e3c9546",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-grid-xs-2",
+      "targets": [
+        ["css=.MuiGrid-grid-xs-2", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]", "xpath:idRelative"],
+        ["xpath=//div[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4087f4d-7156-49f7-890d-a09b852ef40a",
+      "comment": "",
+      "command": "click",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c81bbf60-db2a-4331-8be1-6cfd2bfbf310",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "213b8b18-bfa7-46fc-8354-eb7445adf824",
+      "comment": "",
+      "command": "type",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "32"
+    }, {
+      "id": "cde8eae9-0982-408a-949e-8cf7bb338747",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc7b29c7-240f-4bb0-b93d-6976ab7559e1",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div[2]/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d780ad28-1dc5-4a7b-926b-9dffc736bb0e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c1a5a58-bb9f-458c-a64c-407dcc47184d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: ไม่สามารถบันทึกเป็นเวลาในอดีตได้"
+    }]
+  }, {
+    "id": "a91828f4-6187-47b9-ac66-b25da3415bc7",
+    "name": "B6202897- ข้อมูลอุณหภูมิต้องมีค่าอยู่ระหว่าง 32 - 40",
+    "commands": [{
+      "id": "5ed09476-6020-4469-baf3-20d999023844",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/CreateTreatmentRecord",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a1b8eb6-c062-445a-a359-8916acf9e46d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2c22878-0652-464f-b4bc-a691dcd18a37",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "51bed781-e7b5-418f-ac54-47fd0fb1b54e",
+      "comment": "",
+      "command": "click",
+      "target": "name=DiseaseID",
+      "targets": [
+        ["name=DiseaseID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='DiseaseID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04a801a5-6f52-4175-ac66-210d88b0ffae",
+      "comment": "",
+      "command": "select",
+      "target": "name=DiseaseID",
+      "targets": [],
+      "value": "label=ไข้เลือดออก"
+    }, {
+      "id": "037eca10-034b-46ef-82b4-fc08542a3f68",
+      "comment": "",
+      "command": "click",
+      "target": "name=MedicineID",
+      "targets": [
+        ["name=MedicineID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='MedicineID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6c4a352-3842-4ab9-b1e2-45de10dec9f7",
+      "comment": "",
+      "command": "select",
+      "target": "name=MedicineID",
+      "targets": [],
+      "value": "label=ibupofen"
+    }, {
+      "id": "bf2a6066-45f8-45cc-a2be-33cbdf971db7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9128c755-4000-4016-8fe4-66c561f06c37",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "086cecb7-26e0-431d-8a88-af49492a1d8a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a46fd77b-eda5-4c7a-8dd8-44812da24bd9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label", "css:finder"],
+        ["xpath=//div[5]/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c0bb002-feb9-47e6-8519-104a412a0573",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label", "css:finder"],
+        ["xpath=//div[5]/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b112a9fe-dc64-425d-8fb9-8372bab40f1a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c21a6007-da2a-46eb-9ecb-e2137f7c261f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bcc071a-c6d4-4a38-873e-e0f36aa686d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "718cdfab-4076-40f0-81f3-6663d620f74b",
+      "comment": "",
+      "command": "type",
+      "target": "id=Treatment",
+      "targets": [
+        ["id=Treatment", "id"],
+        ["css=#Treatment", "css:finder"],
+        ["xpath=//textarea[@id='Treatment']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]/div/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "9e7c51b7-2a87-4a97-b451-e1e6a15479bb",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[6]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2007a052-f145-4163-9e2b-436e3d274331",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "7d2f3a66-9efd-4919-adfe-972e2e77da2a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18289c1d-812a-4b6d-91bc-c9efaf4dde7d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2f3cc39-b166-474c-a9ba-326844f61873",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.submit > .MuiButton-label",
+      "targets": [
+        ["css=.submit > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div[2]/div/div[2]/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86d4a49e-fb6b-48dc-9d90-656fba012825",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "973b4abe-14fd-4b88-8ff6-2dd6d799fddf",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40"
+    }]
+  }],
+  "suites": [{
+    "id": "41719c44-da58-42af-b1b9-793a2c06d873",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["66840490-d870-4d34-9e57-27e8ef450f18"]
+  }],
+  "urls": ["http://localhost:3000/CreateTreatmentRecord"],
+  "plugins": []
+}
