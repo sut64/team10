@@ -59,6 +59,7 @@ function CreatePersonnel() {
 
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const apiUrl = "http://localhost:8080";
   const requestOptions = {
@@ -205,9 +206,13 @@ function CreatePersonnel() {
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          setSuccess(true);
+          console.log("บันทึกได้")
+          setSuccess(true)
+          setErrorMessage("")
         } else {
-          setError(true);
+          console.log("บันทึกไม่ได้")
+          setError(true)
+          setErrorMessage(res.error)
         }
       });
   }
@@ -222,7 +227,7 @@ function CreatePersonnel() {
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ {errorMessage}
         </Alert>
       </Snackbar>
       <Paper className={classes.paper}>

@@ -2,10 +2,11 @@ package controller
 
 import (
 	"net/http"
+
+	"github.com/asaskevich/govalidator"
 	"github.com/sut64/team10/entity"
 
 	"github.com/gin-gonic/gin"
-
 )
 
 func CreatePersonnel(c *gin.Context) {
@@ -43,6 +44,12 @@ func CreatePersonnel(c *gin.Context) {
 		Tel:        personnel.Tel,
 		Address:    personnel.Address,
 		Salary:     personnel.Salary,
+	}
+
+	//ขั้นตอนการ validate ที่นำมาจาก unit test
+	if _, err := govalidator.ValidateStruct(ps); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	if err := entity.DB().Create(&ps).Error; err != nil {
