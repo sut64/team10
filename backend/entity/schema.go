@@ -201,7 +201,7 @@ type Disease struct {
 type TreatmentRecord struct {
 	gorm.Model
 	Treatment   string    `valid:"required~กรุณากรอกวิธีการรักษา"`
-	Temperature int       `valid:"positiveInt~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40" `
+	Temperature int       `valid:"positiveInt~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40, required~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40" `
 	RecordDate  time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PersonnelID *uint
