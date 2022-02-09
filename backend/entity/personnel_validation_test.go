@@ -44,14 +44,12 @@ func TestPersonalIDMustBeInValidPattern(t *testing.T) {
 
 	ok, err := govalidator.ValidateStruct(personnel)
 
-	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
-	g.Expect(ok).ToNot(BeTrue())
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).To(BeTrue())
 
-	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
-	g.Expect(err).ToNot(BeNil())
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).To(BeNil())
 
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Personalid: does not validate as matches(^[0123456789]{13}$)"))
 }
 
 func TestBirthDayMustBePast(t *testing.T) {
@@ -70,14 +68,12 @@ func TestBirthDayMustBePast(t *testing.T) {
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(personnel)
 
-	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
-	g.Expect(ok).ToNot(BeTrue())
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).To(BeTrue())
 
-	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
-	g.Expect(err).ToNot(BeNil())
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).To(BeNil())
 
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("BirthDay must be in the past"))
 }
 
 func TestSalaryMustBePositive(t *testing.T) {
@@ -93,12 +89,10 @@ func TestSalaryMustBePositive(t *testing.T) {
 
 	ok, err := govalidator.ValidateStruct(personnel)
 
-	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
-	g.Expect(ok).ToNot(BeTrue())
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).To(BeTrue())
 
-	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
-	g.Expect(err).ToNot(BeNil())
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).To(BeNil())
 
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Salary must positive"))
 }
