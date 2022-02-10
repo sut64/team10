@@ -11,9 +11,9 @@ func TestHistorySheetPass(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	historysheet := HistorySheet{
-		Weight:      50,
-		Height:      150,
-		Temperature: 35,
+		Weight:      50.00,
+		Height:      150.59,
+		Temperature: 35.25,
 		PressureOn:  100,
 		PressureLow: 80,
 		Symptom:     "มีไข้ ไอ เจ็บคอ",

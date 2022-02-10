@@ -132,14 +132,18 @@ type Personnel struct {
 type Patientrecord struct {
 	gorm.Model
 
-	Firstname      string    `valid:"required~Firstname cannot be blank."`
-	Lastname       string    `valid:"required~Lastname cannot be blank."`
-	Idcardnumber   string    `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
-	Age            int       `valid:"intnotlessthanZero~Age must not be less than 0."`
-	Birthday       time.Time `valid:"past~Birthday must be in the past."`
-	Phonenumber    string    `valid:"required~Phonenumber cannot be blank."`
-	Email          string
-	Home           string `valid:"required~Address cannot be blank."`
+	Firstname string
+	//`valid:"required~Firstname cannot be blank."`
+	Lastname string
+	//`valid:"required~Lastname cannot be blank."`
+	Idcardnumber string    `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
+	Age          int       `valid:"intnotlessthanZero~Age must not be less than 0."`
+	Birthday     time.Time `valid:"past~Birthday must be in the past."`
+	Phonenumber  string
+	//`valid:"required~Phonenumber cannot be blank."`
+	Email string
+	Home  string
+	//`valid:"required~Address cannot be blank."`
 	Emergencyname  string
 	Emergencyphone string
 	Timestamp      time.Time
