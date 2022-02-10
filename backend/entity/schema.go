@@ -63,21 +63,21 @@ type HistorySheet struct {
 	Weight      float32 `valid:"positiveFloat~Weight must be positive"`
 	Height      float32
 	Temperature float32
-	PressureOn  int `valid:"positiveInt~Pressure on must be positive"`
+	PressureOn  int `valid:"positiveIntOn~Pressure on must be positive"`
 	PressureLow uint
-	Symptom     string
+	Symptom     string `valid:"required~Symptom not blank"`
 
 	//patientrecord_id ทำหน้าที่เป็น FK
 	PatientrecordID *uint
-	Patientrecord   Patientrecord `gorm:"references:id"`
+	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
 
 	//Personnel_id ทำหน้าที่เป็น FK
 	PersonnelID *uint
-	Personnel   Personnel `gorm:"references:id"`
+	Personnel   Personnel `gorm:"references:id" valid:"-"`
 
 	//DrugAllergy_id ทำหน้าที่เป็น FK
 	DrugAllergyID *uint
-	DrugAllergy   DrugAllergy `gorm:"references:id"`
+	DrugAllergy   DrugAllergy `gorm:"references:id" valid:"-"`
 }
 
 type Gender struct {
@@ -275,5 +275,9 @@ func init() {
 	govalidator.CustomTypeTagMap.Set("intnotlessthanZero", func(i interface{}, context interface{}) bool {
 		v, _ := i.(int)
 		return govalidator.InRangeInt(v, 0, 999999)
+	})
+	govalidator.CustomTypeTagMap.Set("positiveIntOn", func(i interface{}, context interface{}) bool {
+		v, _ := i.(int)
+		return govalidator.InRangeInt(v, 1, 9999)
 	})
 }
