@@ -139,7 +139,7 @@ type Patientrecord struct {
 	Birthday       time.Time `valid:"past~Birthday must be in the past."`
 	Phonenumber    string    `valid:"required~Phonenumber cannot be blank."`
 	Email          string
-	Home           string
+	Home           string `valid:"required~Address cannot be blank."`
 	Emergencyname  string
 	Emergencyphone string
 	Timestamp      time.Time
