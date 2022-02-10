@@ -83,7 +83,7 @@ func TestRoomNumberMustGreaterZero(t *testing.T) {
 
 	appointment := Appointment{
 		Appoint_ID:   "A4321",
-		Room_number:  -2,
+		Room_number:  0,
 		Date_appoint: time.Date(2022, time.Month(3), 12, 10, 0, 0, 0, &time.Location{}),
 	}
 	ok, err := govalidator.ValidateStruct(appointment)
