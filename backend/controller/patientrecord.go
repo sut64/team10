@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -54,7 +55,7 @@ func CreatePatientrecord(c *gin.Context) {
 	}
 
 	// 12: สร้าง Patientrecord
-	rb := entity.Patientrecord{
+	pr := entity.Patientrecord{
 		Prename:        prename,                      // โยงความสัมพันธ์กับ Entity Prename
 		Firstname:      patientrecord.Firstname,      // ตั้งค่าฟิลด์ Firstname
 		Lastname:       patientrecord.Lastname,       // ตั้งค่าฟิลด์ Lastname
@@ -73,12 +74,18 @@ func CreatePatientrecord(c *gin.Context) {
 		Personnel:      personnel,                    // โยงความสัมพันธ์กับ Entity Personnel
 	}
 
-	// 13: บันทึก
-	if err := entity.DB().Create(&rb).Error; err != nil {
+	// ขั้นตอนการ validate ที่นำมาจาก  unit test
+	if _, err := govalidator.ValidateStruct(pr); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"data": rb})
+
+	// 13: บันทึก
+	if err := entity.DB().Create(&pr).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": pr})
 }
 
 // GET /patientrecord/:id
