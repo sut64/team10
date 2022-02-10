@@ -57,7 +57,7 @@ function Patientrecords() {
 
     return (
         <div>
-            <Container className={classes.container} maxWidth="md">
+            <Container className={classes.container} maxWidth="xl">
                 <Box display="flex">
                     <Box flexGrow={1}>
                         <Typography
@@ -84,45 +84,73 @@ function Patientrecords() {
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center" width="5%">
+                                <TableCell align="left" width="3%">
                                     ลำดับ
                                 </TableCell>
-                                <TableCell align="center" width="10%">
-                                    คำนำหน้า
+                                <TableCell align="left" width="5%">
+                                    หน้าชื่อ
                                 </TableCell>
-                                <TableCell align="center" width="10%">
+                                <TableCell align="left" width="5%">
                                     ชื่อ
                                 </TableCell>
-                                <TableCell align="center" width="10%">
+                                <TableCell align="left" width="5%">
                                     นามสกุล
                                 </TableCell>
-                                <TableCell align="center" width="10%">
+                                <TableCell align="left" width="4%">
                                     เพศ
                                 </TableCell>
-                                <TableCell align="center" width="25%">
+                                <TableCell align="left" width="10%">
                                     เลขประจำตัวประชาชน
                                 </TableCell>
-                                <TableCell align="center" width="10%">
+                                <TableCell align="left" width="3%">
                                     อายุ
                                 </TableCell>
-
-                                <TableCell align="center" width="20%">
+                                <TableCell align="left" width="9%">
+                                    วันเกิด
+                                </TableCell>
+                                <TableCell align="left" width="6%">
+                                    กรุ๊ปเลือด
+                                </TableCell>
+                                <TableCell align="left" width="5%">
+                                    Tel.
+                                </TableCell>
+                                <TableCell align="left" width="5%">
+                                    Email
+                                </TableCell>
+                                <TableCell align="left" width="16%">
+                                    ที่อยู่
+                                </TableCell>
+                                <TableCell align="left" width="5%">
                                     จังหวัด
+                                </TableCell>
+                                <TableCell align="left" width="9%">
+                                    Timestamp
+                                </TableCell>
+                                <TableCell align="left" width="9%">
+                                    พนักงานทีรับลงทะเบียน
                                 </TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {patientrecords.map((item: PatientrecordInterface) => (
                                 <TableRow key={item.ID}>
-                                    <TableCell align="center">{item.ID}</TableCell>
-                                    <TableCell align="center">{item.Prename.Prename}</TableCell>
-                                    <TableCell align="center">{item.Firstname}</TableCell>
-                                    <TableCell align="center">{item.Lastname}</TableCell>
-                                    <TableCell align="center">{item.Gender.Genders}</TableCell>
-                                    <TableCell align="center">{item.Idcardnumber}</TableCell>
-                                    <TableCell align="center">{item.Age}</TableCell>
-
-                                    <TableCell align="center">{item.Province.Province}</TableCell>
+                                    <TableCell align="left">{item.ID}</TableCell>
+                                    <TableCell align="left">{item.Prename.Prename}</TableCell>
+                                    <TableCell align="left">{item.Firstname}</TableCell>
+                                    <TableCell align="left">{item.Lastname}</TableCell>
+                                    <TableCell align="left">{item.Gender.Genders}</TableCell>
+                                    <TableCell align="left">{item.Idcardnumber}</TableCell>
+                                    <TableCell align="left">{item.Age}</TableCell>
+                                    
+                                    <TableCell align="left">{format((new Date(item.Birthday)), 'dd MMMM yyyy')}</TableCell>
+                                    <TableCell align="left">{item.BloodType.BloodType}</TableCell>
+                                    <TableCell align="left">{item.Phonenumber}</TableCell>
+                                    <TableCell align="left">{item.Email}</TableCell>
+                                    <TableCell align="left">{item.Home}</TableCell>
+                                    <TableCell align="left">{item.Province.Province}</TableCell>
+                                    
+                                    <TableCell align="left">{format((new Date(item.Timestamp)), 'dd MMMM yyyy hh:mm a')}</TableCell>
+                                    <TableCell align="left">{item.Personnel.Name}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
