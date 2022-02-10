@@ -95,6 +95,6 @@ func TestRoomNumberMustGreaterZero(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Room number greater than zero value"))
+	g.Expect(err.Error()).To(Equal("Room_number: non zero value required"))
 
 }
