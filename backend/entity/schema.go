@@ -60,9 +60,9 @@ type DrugAllergy struct {
 
 type HistorySheet struct {
 	gorm.Model
-	Weight      float64
-	Height      float64
-	Temperature float64
+	Weight      float32 `valid:"positiveFloat~Weight must be positive"`
+	Height      float32
+	Temperature float32
 	PressureOn  uint
 	PressureLow uint
 	Symptom     string
