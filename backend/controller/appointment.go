@@ -47,6 +47,13 @@ func CreateAppointment(c *gin.Context) {
 		Date_appoint:    appoint.Date_appoint,
 	}
 
+	//ขั้นตอน validate ที่นำมาจาก unit test
+	if _, err := govalidator.ValidateStruct(appointment); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+
 	// 13: บันทึก
 	if err := entity.DB().Create(&appointment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})

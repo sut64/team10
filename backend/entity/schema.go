@@ -221,18 +221,18 @@ type TreatmentRecord struct {
 
 type Appointment struct {
 	gorm.Model
-	Appoint_ID   string
+	Appoint_ID   string `valid:"required,matches(^[A]\\d{4}$)~Appoint ID must Start with A and (0-9) 4 digits"`
 	Room_number  uint
 	Date_appoint time.Time
 
 	PatientrecordID *uint
-	Patientrecord   Patientrecord `gorm:"references:id"`
+	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
 
 	PersonnelID *uint
-	Personnel   Personnel `gorm:"references:id"`
+	Personnel   Personnel `gorm:"references:id" valid:"-"`
 
 	TreatmentRecordID *uint
-	TreatmentRecord   TreatmentRecord `gorm:"references:id"`
+	TreatmentRecord   TreatmentRecord `gorm:"references:id" valid:"-"`
 }
 
 func init() {
