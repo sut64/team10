@@ -208,7 +208,7 @@ function CreateTreatmentRecord() {
     function submit() {
 
         let data = {
-            Treatment: treatmentrecord.Treatment,
+            Treatment: treatmentrecord.Treatment ?? "",
             Temperature: convertType(treatmentrecord.Temperature),
             PatientrecordID: convertType(treatmentrecord.PatientrecordID),
             PersonnelID: convertType(treatmentrecord.PersonnelID),

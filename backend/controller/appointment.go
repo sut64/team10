@@ -14,7 +14,7 @@ func CreateAppointment(c *gin.Context) {
 	var appoint entity.Appointment
 	var patient entity.Patientrecord
 	var person entity.Personnel
-	var treatment entity.TreatmentRecord
+	var treatment entity.Treatmentrecord
 
 	// ผลลัพธ์ที่ได้จากขั้นตอนที่ 8 จะถูก bind เข้าตัวแปร appoint
 	if err := c.ShouldBindJSON(&appoint); err != nil {
@@ -34,7 +34,7 @@ func CreateAppointment(c *gin.Context) {
 		return
 	}
 	// 10: ค้นหา TreatmentRecord ด้วย id
-	if tx := entity.DB().Where("id = ?", appoint.TreatmentRecordID).First(&treatment); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", appoint.TreatmentrecordID).First(&treatment); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "TreatmentRecord not found"})
 		return
 	}
@@ -43,7 +43,7 @@ func CreateAppointment(c *gin.Context) {
 	appointment := entity.Appointment{
 		Personnel:       person,    // โยงความสัมพันธ์กับ Entity Personnel
 		Patientrecord:   patient,   // โยงความสัมพันธ์กับ Entity PatientRecord
-		TreatmentRecord: treatment, // โยงความสัมพันธ์กับ Entity TreatmentRecord
+		Treatmentrecord: treatment, // โยงความสัมพันธ์กับ Entity TreatmentRecord
 		Appoint_ID:      appoint.Appoint_ID,
 		Room_number:     appoint.Room_number,
 		Date_appoint:    appoint.Date_appoint,
@@ -68,7 +68,7 @@ func CreateAppointment(c *gin.Context) {
 func GetAppointment(c *gin.Context) {
 	var appoint entity.Appointment
 	id := c.Param("id")
-	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("TreatmentRecord").Raw("SELECT * FROM appointments WHERE id = ?", id).Find(&appoint).Error; err != nil {
+	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("Treatmentrecord").Raw("SELECT * FROM appointments WHERE id = ?", id).Find(&appoint).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -78,7 +78,7 @@ func GetAppointment(c *gin.Context) {
 // GET /appointments
 func ListAppointments(c *gin.Context) {
 	var appointments []entity.Appointment
-	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("TreatmentRecord").Raw("SELECT * FROM appointments").Find(&appointments).Error; err != nil {
+	if err := entity.DB().Preload("Personnel").Preload("Patientrecord").Preload("Treatmentrecord").Raw("SELECT * FROM appointments").Find(&appointments).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

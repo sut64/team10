@@ -12,7 +12,7 @@ func TestTreatmentRecordPass(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	// ข้อมูลถูกต้องหมดทุก field
-	treatment := TreatmentRecord{
+	treatment := Treatmentrecord{
 		Treatment:   "วิธีการรักษา",
 		Temperature: 32,
 		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
@@ -30,7 +30,7 @@ func TestTreatmentRecordPass(t *testing.T) {
 func TestDateMustBeFuture(t *testing.T) {
 	g := NewGomegaWithT(t)
 
-	treatment := TreatmentRecord{
+	treatment := Treatmentrecord{
 		Treatment:   "วิธีการรักษา",
 		Temperature: 32,
 		RecordDate:  time.Date(2021, 12, 22, 0, 0, 0, 0, time.UTC),
@@ -52,7 +52,7 @@ func TestDateMustBeFuture(t *testing.T) {
 func TestTreatmentRequire(t *testing.T) {
 	g := NewGomegaWithT(t)
 
-	treatment := TreatmentRecord{
+	treatment := Treatmentrecord{
 		Treatment:   "",
 		Temperature: 32,
 		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
@@ -73,7 +73,7 @@ func TestTreatmentRequire(t *testing.T) {
 func TestTemperatureInRange(t *testing.T) {
 	g := NewGomegaWithT(t)
 
-	treatment := TreatmentRecord{
+	treatment := Treatmentrecord{
 		Treatment:   "วิธีการรักษา",
 		Temperature: 20,
 		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
