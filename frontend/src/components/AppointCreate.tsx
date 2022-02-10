@@ -110,7 +110,7 @@ const getPatients = async () => {
 };
 
 const getTreatments = async () => {
-  fetch(`${apiUrl}/treatmentrecords`, requestOptions)
+  fetch(`${apiUrl}/treatmentrecord`, requestOptions)
     .then((response) => response.json())
     .then((res) => {
       if (res.data) {

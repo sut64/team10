@@ -35,39 +35,41 @@ func SetupDatabase() {
 		&Patientrecord{},
 		&Bill{},
 		&Disease{},
-		&TreatmentRecord{},
+		&Treatmentrecord{},
 		&Appointment{})
 	db = database
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "ไม่มี",
-		Description: "none",
-	})
+	disease1 := Disease{
+		Diname: "ไม่มี",
+	}
+	db.Model(&Disease{}).Create(&disease1)
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "ไข้หวัดใหญ่",
-		Description: "none",
-	})
+	disease2 := Disease{
+		Diname: "ไข้หวัดใหญ่",
+	}
+	db.Model(&Disease{}).Create(&disease2)
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "ไข้เลือดออก",
-		Description: "none",
-	})
+	disease3 := Disease{
+		Diname: "ไข้เลือดออก",
+	}
+	db.Model(&Disease{}).Create(&disease3)
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "วัณโรค",
-		Description: "none",
-	})
+	disease4 := Disease{
+		Diname: "โรคเบาหวาน",
+	}
+	db.Model(&Disease{}).Create(&disease4)
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "โรคเบาหวาน",
-		Description: "none",
-	})
+	disease5 := Disease{
+		Diname: "โรคภูมิแพ้",
+	}
+	db.Model(&Disease{}).Create(&disease5)
 
-	db.Model(&Disease{}).Create(&Disease{
-		Diname:      "โรคภูมิแพ้",
-		Description: "none",
-	})
+	medicine1 := Medicine{
+		Medname:     "ยาแก้ไข้",
+	}
+	db.Model(&Medicine{}).Create(&medicine1)
+
+	
 
 	db.Model(&Medicine{}).Create(&Medicine{
 		Medname:     "ไม่มี",
@@ -230,6 +232,37 @@ func SetupDatabase() {
 		Emergencyphone: "0111111111",
 		Timestamp:      time.Now(),
 		Personnel:      personnel1,
+	})
+
+	patientrecord1 := Patientrecord{
+		Prename:        prename1,
+		Firstname:      "กินอะไรดี",
+		Lastname:       "อร่อยจัง",
+		Gender:         gender1,
+		Idcardnumber:   "1478899111112",
+		Age:            20,
+		Birthday:       time.Now(),
+		BloodType:      bloodtype2,
+		Phonenumber:    "0816629081",
+		Email:          "eat@test.com",
+		Home:           "111 moo2",
+		Province:       province2,
+		Emergencyname:  "มาสาย ลาก่อน",
+		Emergencyphone: "0111111111",
+		Timestamp:      time.Now(),
+		Personnel:      personnel1,
+	}
+	db.Model(&Patientrecord{}).Create(&patientrecord1)
+
+
+	db.Model(&Treatmentrecord{}).Create(&Treatmentrecord{
+		Patientrecord: patientrecord1,
+		Disease: disease2,
+		Medicine: medicine1,
+		Treatment: "การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก",
+		Temperature: 32,
+		Personnel:   personnel1,
+		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
 	})
 
 	// DrugAllergy Data

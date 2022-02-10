@@ -86,7 +86,7 @@ function Treatmentrecord() {
             </Button>
           </Box>
         </Box>
-        <TableContainer component={Paper} className={classes.tableSpace}>
+        <TableContainer component={Paper} className={classes.tableSpace} >
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
@@ -119,15 +119,15 @@ function Treatmentrecord() {
             </TableHead>
             <TableBody>
               {treatmentrecords.map((item: TreatmentrecordInterface) => (
-                <TableRow key={item.ID}>
+                <TableRow key={item.ID} >
                   <TableCell align="center">{item.ID}</TableCell>
                   <TableCell align="center">{item.Patientrecord.Firstname} {item.Patientrecord.Lastname}</TableCell>
                   <TableCell align="center">{item.Disease.Diname}</TableCell>
                   <TableCell align="center">{item.Medicine.Medname}</TableCell>
-                  <TableCell align="center">{item.Treatment}</TableCell>
+                  <TableCell align="center" style={{textAlign:'left'}}>{item.Treatment}</TableCell>
                   <TableCell align="center">{item.Temperature}</TableCell>
                   <TableCell align="center">{item.Personnel.Name}</TableCell>
-                  <TableCell align="center">{moment(item.RecordDate).format("DDMMYYYY ")}</TableCell>
+                  <TableCell align="center">{moment(item.RecordDate).format("DD/MM/YYYY")}</TableCell>
 
 
 

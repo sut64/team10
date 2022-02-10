@@ -37,7 +37,7 @@ type Medicine struct {
 	Quantity    string
 	Price       float64
 
-	TreatmentRecords []TreatmentRecord `gorm"foreignKey:MedicineID"`
+	Treatmentrecord []Treatmentrecord `gorm"foreignKey:MedicineID"`
 	Bills            []Bill            `gorm:"foreignKey:MedicineID"`
 }
 
@@ -125,7 +125,7 @@ type Personnel struct {
 
 	//1 Personnel เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheets    []HistorySheet    `gorm:"foreignKey:PersonnelID"`
-	TreatmentRecords []TreatmentRecord `gorm"foreignKey:PersonnelID"`
+	Treatmentrecord []Treatmentrecord `gorm"foreignKey:PersonnelID"`
 	Appointments     []Appointment     `gorm:"foreignKey:PersonnelID"`
 }
 
@@ -166,7 +166,7 @@ type Patientrecord struct {
 
 	//1 Patientrecord เป็นเจ้าของได้หลาย HistorySheet_ID
 	HistorySheets    []HistorySheet    `gorm:"foreignKey:PatientrecordID"`
-	TreatmentRecords []TreatmentRecord `gorm"foreignKey:PatientrecordID"`
+	Treatmentrecord []Treatmentrecord `gorm"foreignKey:PatientrecordID"`
 	Appointments     []Appointment     `gorm:"foreignKey:PatientrecordID"`
 	Bills            []Bill            `gorm:"foreignKey:PatientrecordID"`
 }
@@ -195,10 +195,10 @@ type Disease struct {
 	Description string
 
 	//1 Di เป็นเจ้าของได้หลาย TreatmentRecord_ID
-	TreatmentRecords []TreatmentRecord `gorm"foreignKey:DiseaseID"`
+	Treatmentrecord []Treatmentrecord `gorm"foreignKey:DiseaseID"`
 }
 
-type TreatmentRecord struct {
+type Treatmentrecord struct {
 	gorm.Model
 	Treatment   string    `valid:"required~กรุณากรอกวิธีการรักษา"`
 	Temperature int       `valid:"positiveInt~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40, required~อุณหภูมิควรจะอยู่ในช่วงของ 32 - 40" `
@@ -216,7 +216,7 @@ type TreatmentRecord struct {
 	DiseaseID *uint
 	Disease   Disease `gorm:"reference:id" valid:"-"`
 
-	Appointments []Appointment `gorm:"foreignKey:TreatmentRecordID"`
+	Appointments []Appointment `gorm:"foreignKey:TreatmentrecordID"`
 }
 
 type Appointment struct {
@@ -231,8 +231,8 @@ type Appointment struct {
 	PersonnelID *uint
 	Personnel   Personnel `gorm:"references:id" valid:"-"`
 
-	TreatmentRecordID *uint
-	TreatmentRecord   TreatmentRecord `gorm:"references:id" valid:"-"`
+	TreatmentrecordID *uint
+	Treatmentrecord   Treatmentrecord `gorm:"references:id" valid:"-"`
 }
 
 func init() {
