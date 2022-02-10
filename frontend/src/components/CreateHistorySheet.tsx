@@ -182,7 +182,7 @@ function submit() {
     body: JSON.stringify(data),
   };
 
-  fetch(`${apiUrl}/historysheet`, requestOptionsPost)
+  fetch(`${apiUrl}/historysheets`, requestOptionsPost)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {

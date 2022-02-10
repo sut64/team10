@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team10/entity"
 )
@@ -49,6 +50,12 @@ func CreateHistorySheet(c *gin.Context) {
 		PressureOn:    historysheet.PressureOn,  // ตั้งค่าฟิลด์ PressureOn
 		PressureLow:   historysheet.PressureLow, // ตั้งค่าฟิลด์ PressureLow
 		Symptom:       historysheet.Symptom,     // ตั้งค่าฟิลด์ Symptom
+	}
+
+	// ขั้นตอนการ validate ที่นำมาจาก  unit test
+	if _, err := govalidator.ValidateStruct(hs); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// บันทึก
