@@ -38,6 +38,9 @@ func main() {
 	r.PATCH("/personnels", controller.UpdatePersonnel)
 	r.DELETE("/personnels/:id", controller.DeletePersonnel)
 
+	// Personnel Routes of PatientrecordCreate
+	r.GET("/personnelPatientRecords", controller.ListPersonnelPatientRecord)
+
 	// Prename Routes of Patientrecord
 	r.GET("/prenames", controller.ListPrenames)
 	r.GET("/prename/:id", controller.GetPrename)
