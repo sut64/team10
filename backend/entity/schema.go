@@ -135,7 +135,7 @@ type Patientrecord struct {
 	Firstname      string `valid:"required~Firstname cannot be blank"`
 	Lastname       string `valid:"required~Lastname cannot be blank"`
 	Idcardnumber   string `valid:"matches(^[1-9]\\d{12}$)~Idcardnumber must be 0 - 19 and contain 13 digits."`
-	Age            uint8  `valid:"range(0|120)~Age must be in range 0 - 120"`
+	Age            int    `valid:"intnotlessthanZero~Age must not be less than 0."`
 	Birthday       time.Time
 	Phonenumber    string
 	Email          string
@@ -221,8 +221,8 @@ type TreatmentRecord struct {
 
 type Appointment struct {
 	gorm.Model
-	Appoint_ID   string `valid:"required,matches(^[A]\\d{4}$)~Appoint ID must Start with A and (0-9) 4 digits"`
-	Room_number  int `valid:"required,positiveIntRoomNumber~Room_number: non zero value required"`
+	Appoint_ID   string    `valid:"required,matches(^[A]\\d{4}$)~Appoint ID must Start with A and (0-9) 4 digits"`
+	Room_number  int       `valid:"required,positiveIntRoomNumber~Room_number: non zero value required"`
 	Date_appoint time.Time `valid:"required,future~Date Appointment must be in the future"`
 
 	PatientrecordID *uint
@@ -266,5 +266,10 @@ func init() {
 	govalidator.CustomTypeTagMap.Set("positiveIntRoomNumber", func(i interface{}, context interface{}) bool {
 		v, _ := i.(int)
 		return govalidator.InRangeInt(v, 1, 10)
+	})
+
+	govalidator.CustomTypeTagMap.Set("intnotlessthanZero", func(i interface{}, context interface{}) bool {
+		v, _ := i.(int)
+		return govalidator.InRangeInt(v, 0, 999999)
 	})
 }
