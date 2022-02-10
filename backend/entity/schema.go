@@ -180,13 +180,13 @@ type Bill struct {
 	Dateofbill time.Time `valid:"future~ไม่สามารถบันทึกเป็นเวลาในอดีตได้"`
 
 	PatientrecordID *uint
-	Patientrecord   Patientrecord `gorm:"references:id"`
+	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
 
 	MedicineID *uint
-	Medicine   Medicine `gorm:"references:id"`
+	Medicine   Medicine `gorm:"references:id" valid:"-"`
 
 	MedicalTreatmentID *uint
-	MedicalTreatment   MedicalTreatment `gorm:"references:id"`
+	MedicalTreatment   MedicalTreatment `gorm:"references:id" valid:"-"`
 }
 
 type Disease struct {
