@@ -223,7 +223,7 @@ type Appointment struct {
 	gorm.Model
 	Appoint_ID   string `valid:"required,matches(^[A]\\d{4}$)~Appoint ID must Start with A and (0-9) 4 digits"`
 	Room_number  uint
-	Date_appoint time.Time
+	Date_appoint time.Time `valid:"required,future~Date Appointment must be in the future"`
 
 	PatientrecordID *uint
 	Patientrecord   Patientrecord `gorm:"references:id" valid:"-"`
