@@ -1,3 +1,4 @@
+
 package controller
 
 import (
@@ -5,6 +6,7 @@ import (
 	"github.com/sut64/team10/entity"
 
 	"github.com/gin-gonic/gin"
+	"github.com/asaskevich/govalidator"
 )
 
 // POST /appointment

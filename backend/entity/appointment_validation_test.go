@@ -77,3 +77,24 @@ func TestDateAppointMustbeFuture(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("Date Appointment must be in the future"))
 
 }
+
+func TestRoomNumberMustGreaterZero(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	appointment := Appointment{
+		Appoint_ID:   "A4321",
+		Room_number:  -2,
+		Date_appoint: time.Date(2022, time.Month(3), 12, 10, 0, 0, 0, &time.Location{}),
+	}
+	ok, err := govalidator.ValidateStruct(appointment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Room number greater than zero value"))
+
+}
