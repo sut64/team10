@@ -54,3 +54,29 @@ func TestHistorySheetWeight(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("Weight must be positive"))
 
 }
+
+func TestHistorySheetPressureOn(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	historysheet := HistorySheet{
+		Weight:      50.00,
+		Height:      150.52,
+		Temperature: 35.5,
+		PressureOn:  -10,
+		PressureLow: 80,
+		Symptom:     "มีไข้ ไอ เจ็บคอ",
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(historysheet)
+
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Pressure on must be positive"))
+
+}
