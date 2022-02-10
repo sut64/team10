@@ -160,7 +160,7 @@ function PatientrecordCreate() {
   };
 
   const getPersonnels = async () => {
-    fetch(`${apiUrl}/personnelRecords`, requestOptions)
+    fetch(`${apiUrl}/personnels`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -200,7 +200,7 @@ function PatientrecordCreate() {
       ProvinceID: convertType(patientrecord.ProvinceID),
       Emergencyname: patientrecord.Emergencyname ?? "",
       Emergencyphone: patientrecord.Emergencyphone ?? "",
-      Timestamp: selectedDate1,
+      Timestamp: selectedDate,
       PersonnelID: convertType(patientrecord.PersonnelID),
     };
 
@@ -429,7 +429,7 @@ function PatientrecordCreate() {
             </FormControl>
           </Grid>
 
-          <Grid item xs={8}>
+          <Grid item xs={6}>
             <p>ที่อยู่</p>
             <FormControl fullWidth variant="outlined">
               <TextField
@@ -443,7 +443,7 @@ function PatientrecordCreate() {
             </FormControl>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={6}>
             <FormControl fullWidth variant="outlined">
               <p>จังหวัด</p>
               <Select
@@ -500,11 +500,10 @@ function PatientrecordCreate() {
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDateTimePicker
                   name="Timestamp"
-                  //readOnly
+                  readOnly
                   value={selectedDate1}
                   onChange={handleDateChange1}
-                  disabled
-                  label=""
+                  label="วันที่และเวลา"
                   minDate={new Date("2018-01-01T00:00")}
                   format="yyyy/MM/dd hh:mm a"
                 />
