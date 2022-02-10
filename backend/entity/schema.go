@@ -63,7 +63,7 @@ type HistorySheet struct {
 	Weight      float32 `valid:"positiveFloat~Weight must be positive"`
 	Height      float32
 	Temperature float32
-	PressureOn  uint
+	PressureOn  int `valid:"positiveInt~Pressure on must be positive"`
 	PressureLow uint
 	Symptom     string
 
