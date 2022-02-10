@@ -30,7 +30,7 @@ func TestBillPass(t *testing.T) {
 
 }
 
-func TestBillSummustnotzero(t *testing.T) {
+func TestBillSumMustnotzero(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	bill := Bill{
@@ -51,7 +51,7 @@ func TestBillSummustnotzero(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Sum must not zero"))
+	g.Expect(err.Error()).To(Equal("Sum must not Zero"))
 
 }
 func TestBillListmustnotzero(t *testing.T) {
@@ -75,7 +75,7 @@ func TestBillListmustnotzero(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("List must not zero"))
+	g.Expect(err.Error()).To(Equal("List must not Zero"))
 
 }
 
@@ -100,6 +100,6 @@ func TestBillDate(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("DateofBill must be in the future"))
+	g.Expect(err.Error()).To(Equal("ไม่สามารถบันทึกเป็นเวลาในอดีตได้"))
 
 }
