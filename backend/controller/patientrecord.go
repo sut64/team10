@@ -24,9 +24,9 @@ func CreatePatientrecord(c *gin.Context) {
 		return
 	}
 
-	// 9: ค้นหา bloodtype ด้วย id
-	if tx := entity.DB().Where("id = ?", patientrecord.BloodTypeID).First(&bloodtype); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "bloodtype not found"})
+	// 9: ค้นหา prename ด้วย id
+	if tx := entity.DB().Where("id = ?", patientrecord.PrenameID).First(&prename); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "prename not found"})
 		return
 	}
 
@@ -36,25 +36,25 @@ func CreatePatientrecord(c *gin.Context) {
 		return
 	}
 
-	// 11: ค้นหา personnel ด้วย id
-	if tx := entity.DB().Where("id = ?", patientrecord.PersonnelID).First(&personnel); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "personnel not found"})
+	// 11: ค้นหา bloodtype ด้วย id
+	if tx := entity.DB().Where("id = ?", patientrecord.BloodTypeID).First(&bloodtype); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "bloodtype not found"})
 		return
 	}
 
-	// 12: ค้นหา prename ด้วย id
-	if tx := entity.DB().Where("id = ?", patientrecord.PrenameID).First(&prename); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "prename not found"})
-		return
-	}
-
-	// 13: ค้นหา province ด้วย id
+	// 12: ค้นหา province ด้วย id
 	if tx := entity.DB().Where("id = ?", patientrecord.ProvinceID).First(&province); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "province not found"})
 		return
 	}
 
-	// 12: สร้าง Patientrecord
+	// 13: ค้นหา personnel ด้วย id
+	if tx := entity.DB().Where("id = ?", patientrecord.PersonnelID).First(&personnel); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "personnel not found"})
+		return
+	}
+
+	// 14: สร้าง Patientrecord
 	pr := entity.Patientrecord{
 		Prename:        prename,                      // โยงความสัมพันธ์กับ Entity Prename
 		Firstname:      patientrecord.Firstname,      // ตั้งค่าฟิลด์ Firstname
