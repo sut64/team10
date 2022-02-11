@@ -1,0 +1,1119 @@
+{
+  "id": "223bcd8a-83c1-4f3a-9efb-1cc4bf6aabc1",
+  "version": "2.0",
+  "name": "B6227166-Appointment",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "29502d74-ffe4-4667-9262-540dc522237f",
+    "name": "B6227166 - ตรวจสอบเวลา Date Appoint ต้องเป็นอนาคต",
+    "commands": [{
+      "id": "595e8837-b4d3-465a-8f2d-2b49d15d2450",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3627ee04-c985-48e1-83ea-31a69129b491",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) path",
+      "targets": [
+        ["css=a:nth-child(7) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ecb29ab-34c1-40ed-9b95-757a41b241b6",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "227e4e75-d9a4-4acd-960c-bd38f44b76c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31363e32-1e2d-40ee-913a-8ee68f81d9c0",
+      "comment": "",
+      "command": "click",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d64c91d2-6ea8-40f2-9cae-06165dc46873",
+      "comment": "",
+      "command": "type",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "A0325"
+    }, {
+      "id": "963d8a5c-e78b-4191-ae93-cb76aa7f0d29",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0c520ae-5ca6-4620-b218-339e1fa3c57b",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "d55ecf9c-842d-4e4b-a5a7-b4011ae2fb58",
+      "comment": "",
+      "command": "click",
+      "target": "name=TreatmentrecordID",
+      "targets": [
+        ["name=TreatmentrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='TreatmentrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41459d5a-e94e-4373-adbc-075830bdbbe8",
+      "comment": "",
+      "command": "select",
+      "target": "name=TreatmentrecordID",
+      "targets": [],
+      "value": "label=การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก"
+    }, {
+      "id": "a48abfb5-7abf-4688-bc93-09a567ae4335",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "336d7a95-2825-4fcf-80c3-ec81ef8cf7c9",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "99058e7f-4b9b-4430-8937-2cd2b58b350d",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "1b484c3c-61bd-4162-a0ba-c6a3971c03a2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f66d1491-92e1-4bf2-a73b-ddf5e9a49c3b",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "7d1ccdfe-9d3f-4045-969a-e1d2089b1815",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97346897-9e3c-4075-bb48-aef9c597ddfa",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "682fdbd1-c472-4d03-873d-939974a37d9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c67ad5b-ae73-48a0-a0e5-e13a813840ec",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19515cfa-ca5a-459b-9901-82ba1418c05c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "f88b0bea-85cb-44aa-8f1d-5cbd4f3bcfe1",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "173dadf5-3b8c-4572-b5b7-0a7183983a41",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3a95747-d1ce-464a-8c15-e2776ac9e9e5",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiPickersCalendarHeader-iconButton:nth-child(1) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7ecf5b7-f9ef-46f5-a8f9-45d236575154",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(2) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(2) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[3]/div[2]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d298a12-32b1-427b-a076-c9c4d3e68725",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a92d46f8-38c1-4115-a0ea-7f8339034294",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกการนัด')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5f8a24b-7547-4d46-9adb-21e4ee25d889",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c385accd-e641-4b18-a8f7-bd71854f85c9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ Date Appointment must be in the future"
+    }]
+  }, {
+    "id": "baf94dd4-367e-4048-a624-65de32814537",
+    "name": "B6227166 - ตรวจสอบหมายเลข Room number ต้องมากกว่า 0",
+    "commands": [{
+      "id": "3359a859-2326-4e15-8420-2b51342de84b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b4749b8-6f2d-4826-ac16-d72417534681",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .MuiSvgIcon-root",
+      "targets": [
+        ["css=a:nth-child(7) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b33ca4b-4090-4776-a802-d9ac1d5134e3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2570d542-d182-47a8-bb00-7338e7c2c623",
+      "comment": "",
+      "command": "click",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2b6083c-be82-4ad7-8051-2af467bccb6b",
+      "comment": "",
+      "command": "type",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "A0325"
+    }, {
+      "id": "07d09d12-1672-4794-b63a-7778479a29fa",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc29ead7-aa4e-4d9f-b27e-71e33b996b4e",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "65ed3306-4973-4c82-9fdf-ee34d4628419",
+      "comment": "",
+      "command": "click",
+      "target": "name=TreatmentrecordID",
+      "targets": [
+        ["name=TreatmentrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='TreatmentrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56d93ba7-4560-48c4-9930-3ae08d781cde",
+      "comment": "",
+      "command": "select",
+      "target": "name=TreatmentrecordID",
+      "targets": [],
+      "value": "label=การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก"
+    }, {
+      "id": "8d789480-bc40-4ff6-be3e-528962b38be7",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d70bacf-77aa-4f3a-88e3-50d9a7c9b9ea",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "e960adfd-4e7e-47c0-a39a-5734f8d93bd9",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "d23190cb-1841-4edd-a266-98667807f15e",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a848cd9-fe21-4993-9e10-a162ff380a69",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "98dde826-8398-4995-9e49-8ee508f19e74",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f778523-57c8-4459-ace0-bc8e8382aa3e",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d0931b3-4d0a-4d43-8da5-12c43b4737fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6381cc59-5fa7-4e2f-880e-f2434e0eb561",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[2]/div[5]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e5fff61-3d7a-421b-a68a-ebcedf3c8bb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f9df8bc-f2e2-4f76-8a08-653ab0dc9265",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกการนัด')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b001848-981a-4531-99fe-dd55382b81c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8bb596e-a97a-4c4b-b4b3-f2a8f4d036e6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ Room_number: non zero value required"
+    }]
+  }, {
+    "id": "539df9a7-ea85-48f0-ad15-9b3e7c18d82b",
+    "name": "B6227166 - ตรวจสอบ Appointment ID ต้องขึ้นต้นด้วย A ตามด้วย 0-9 อีก 4 ตัว",
+    "commands": [{
+      "id": "47ccac49-600f-4e64-afc1-e4f34db51f46",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9f400884-6bb2-4359-a561-50dc9275a40a",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .MuiSvgIcon-root",
+      "targets": [
+        ["css=a:nth-child(7) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "11df3975-5385-438c-abef-a5856b0ab978",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcdec508-fae9-4a0e-9ce5-fc9a82f50e1a",
+      "comment": "",
+      "command": "click",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f094dbc1-9825-40b0-82c6-a2769af6dbbe",
+      "comment": "",
+      "command": "type",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "fg1234"
+    }, {
+      "id": "5f246f0c-6448-48dc-98ce-b443713b7148",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f285c9b5-608b-40a4-af75-dfd70777a6ff",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "4ec23eec-a38f-4f10-84dd-e1bfbc484487",
+      "comment": "",
+      "command": "click",
+      "target": "name=TreatmentrecordID",
+      "targets": [
+        ["name=TreatmentrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='TreatmentrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8195e3d6-061f-4a04-9344-bbab8b0e02dc",
+      "comment": "",
+      "command": "select",
+      "target": "name=TreatmentrecordID",
+      "targets": [],
+      "value": "label=การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก"
+    }, {
+      "id": "2508bc34-8959-4f89-aad9-370ace3d6ad4",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd683cc5-f666-4582-a1a7-44405b837d9f",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "b00ebc84-1ce5-48b3-b26a-5337d3958aae",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "0ac1b77e-c613-4cab-a666-ed4d91dac84e",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddb31bd2-7cd1-47cf-8550-392e18d30d76",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "12d5e075-c029-4f5b-9b52-227dd2b76e5e",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a29b0b97-e54e-451c-a641-93f23911307a",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e5d7642-de29-445b-8e55-2c3ec6bd27ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "008b5f73-89b9-4531-bd75-ea6320fea2d9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0959b5e7-c218-4df7-ae9f-41478f223525",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "792124af-b3e0-40f3-8bf3-5bf61562b9e4",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8e54b66-a218-4bea-a2c6-e1d3c7c6c437",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[2]/div[5]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1c112b8-fedd-4961-8b50-e6d1b6d17ce6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ae8840f-04c1-4a38-978e-c2142142638e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกการนัด')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b71351c-3879-4534-abaa-ee4dcbe79013",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกการนัด')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12598c55-ec4c-43f3-89c9-2a73b1e3c97e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d1dab62-dbf0-41d9-9736-f6c47b363d57",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ Appoint ID must Start with A and (0-9) 4 digits"
+    }]
+  }, {
+    "id": "0db2ddfc-9b63-41cc-85a5-ba1ba4152731",
+    "name": "B6227166 - บันทึกข้อมูล Appointment สำเร็จ",
+    "commands": [{
+      "id": "0b96ed9d-f32a-447c-91cb-2c5a6bac09dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06136cf1-e884-4c35-a22b-cb9038cf592a",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) path",
+      "targets": [
+        ["css=a:nth-child(7) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "91978d3f-8f4c-4ebc-84bd-f843a06e5fe5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "618c95fa-b2ce-4fd5-b661-bf915a29f792",
+      "comment": "",
+      "command": "click",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5911f40-b967-44da-9188-4fa3d0357620",
+      "comment": "",
+      "command": "type",
+      "target": "id=Appoint_ID",
+      "targets": [
+        ["id=Appoint_ID", "id"],
+        ["css=#Appoint_ID", "css:finder"],
+        ["xpath=//input[@id='Appoint_ID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "A0325"
+    }, {
+      "id": "1d5e9157-1ece-4b3b-ab8f-b03d42254cd0",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b5c0d53-bd28-44ff-8f0a-e05d8bec8e10",
+      "comment": "",
+      "command": "select",
+      "target": "name=PatientrecordID",
+      "targets": [],
+      "value": "label=นคร ศรีสรรณ์"
+    }, {
+      "id": "def6b92e-40b3-42ef-8b5e-82387e22b5b6",
+      "comment": "",
+      "command": "click",
+      "target": "name=TreatmentrecordID",
+      "targets": [
+        ["name=TreatmentrecordID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='TreatmentrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "552543cf-8ac1-4211-995b-32116dc2b273",
+      "comment": "",
+      "command": "select",
+      "target": "name=TreatmentrecordID",
+      "targets": [],
+      "value": "label=การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก"
+    }, {
+      "id": "362c5f90-5b4b-4c4c-863f-9d62bb222db3",
+      "comment": "",
+      "command": "click",
+      "target": "name=PersonnelID",
+      "targets": [
+        ["name=PersonnelID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PersonnelID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ab98b6a-fcc6-4fee-8e49-a29be9c54cd1",
+      "comment": "",
+      "command": "select",
+      "target": "name=PersonnelID",
+      "targets": [],
+      "value": "label=ขยัน อดทด"
+    }, {
+      "id": "a24a055b-bc8e-44d1-9adf-7fca16383d8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "c1b20036-6893-44fc-ac01-232585270e44",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f22aaa78-43a3-4cab-96b3-bb4fd5784990",
+      "comment": "",
+      "command": "type",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "6af82425-3ac2-4298-8180-f226e3268c33",
+      "comment": "",
+      "command": "click",
+      "target": "id=Room_number",
+      "targets": [
+        ["id=Room_number", "id"],
+        ["css=#Room_number", "css:finder"],
+        ["xpath=//input[@id='Room_number']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "059c5fb1-4bbe-4366-a16c-e54c4ed70936",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root > .MuiButtonBase-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root > .MuiButtonBase-root", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[6]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9623032d-cabe-4241-848d-bea4a74e04e3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root > .MuiButtonBase-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root > .MuiButtonBase-root", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[6]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0284dda-1cf4-4517-a862-d63d811f69a1",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root > .MuiButtonBase-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root > .MuiButtonBase-root", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[6]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ebdf3d6-5c64-4ace-b897-f564faaf34b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d161df3-52f4-48cf-8683-f52693ed77c9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(2) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[2]/div[5]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'10')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dda51cc-6eeb-4f6a-b1d8-5f38a8f0e492",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d53dacf3-b8b7-4ee0-9ee5-649f5f93a018",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกการนัด')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce93291e-f65a-4c6d-8795-d6e8b932f539",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bce6f20-fc20-46fd-a2a5-63ce78a31946",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
+    }]
+  }],
+  "suites": [{
+    "id": "96566f52-ff51-4f8c-8331-263913477bc2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["29502d74-ffe4-4667-9262-540dc522237f"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
