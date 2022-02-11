@@ -19,7 +19,7 @@ import { AppointsInterface } from "../models/IAppoint";
 const useStyles = makeStyles((theme: Theme) =>
  createStyles({
    container: {marginTop: theme.spacing(2)},
-   table: { minWidth: 650},
+   table: { minWidth: 700},
    tableSpace: {marginTop: 20},
  })
 );
@@ -84,25 +84,28 @@ function Appoints() {
            <TableHead>
              <TableRow>
                <TableCell align="center" width="5%">
-                 No.
-               </TableCell>
-               <TableCell align="center" width="10%">
-                  Appoint ID
-               </TableCell>
-               <TableCell align="center" width="20%">
-                  Patient
-               </TableCell>
-               <TableCell align="center" width="25%">
-                  Treatment
-               </TableCell>
-               <TableCell align="center" width="20%">
-                  Doctor
+                 ลำดับ
                </TableCell>
                <TableCell align="center" width="5%">
-                  Room number
+                  รหัสการนัด
                </TableCell>
-               <TableCell align="center" width="15%">
-                  Date
+               <TableCell align="center" width="20%">
+                  คนไข้
+               </TableCell>
+               <TableCell align="center" width="10%">
+                  เบอร์ติดต่อ
+               </TableCell>
+               <TableCell align="center" width="25%">
+                  การรักษา
+               </TableCell>
+               <TableCell align="center" width="20%">
+                  แพทย์ผู้ตรวจ
+               </TableCell>
+               <TableCell align="center" width="5%">
+                  ห้องตรวจ
+               </TableCell>
+		 <TableCell align="center" width="10%">
+                  วันที่นัดหมาย
                </TableCell>
              </TableRow>
            </TableHead>
