@@ -204,7 +204,7 @@ const convertType = (data: string | number | undefined) => {
                variant="outlined"
                type="string"
                size="medium"
-               placeholder="กรุณากรอกรหัสการนัดคนไข้"
+               placeholder="กรอกรหัสการนัดคนไข้"
                value={appoints.Appoint_ID || ""}
                onChange={handleInputChange}
              />
@@ -286,7 +286,7 @@ const convertType = (data: string | number | undefined) => {
                variant="outlined"
                type="number"
                size="medium"
-               InputProps={{ inputProps: { min: 1 } }}
+               InputProps={{ inputProps: { min: 0 ,max: 10 } }}
                InputLabelProps={{
                  shrink: true,
                }}
@@ -304,7 +304,7 @@ const convertType = (data: string | number | undefined) => {
                  id="Date_appoint"
                  format="yyyy-MM-dd"
                  value={selectedDate}
-                 minDate ={new Date()}
+                 //minDate ={new Date()}
                  onChange={handleDateChange}
                  KeyboardButtonProps={{
                    "aria-label": "change date",
