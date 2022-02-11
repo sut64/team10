@@ -115,6 +115,7 @@ function Appoints() {
                  <TableCell align="center">{item.ID}</TableCell>
                  <TableCell align="center">{item.Appoint_ID}</TableCell>
                  <TableCell align="center">{item.Patientrecord.Firstname} {item.Patientrecord.Lastname}</TableCell>
+		 <TableCell align="center">{item.Patientrecord.Phonenumber}</TableCell>
                  <TableCell align="center">{item.Treatmentrecord.Treatment}</TableCell>
                  <TableCell align="center">{item.Personnel.Name}</TableCell>
                  <TableCell align="center">{item.Room_number}</TableCell>
