@@ -71,7 +71,7 @@ func ListPersonnel(c *gin.Context) {
 
 func ListPersonnelPatientRecord(c *gin.Context) {
 	var personnel []entity.Personnel
-	if err := entity.DB().Preload("BloodType").Preload("Gender").Preload("JobTitle").Raw("SELECT * FROM personnels WHERE job_title_id = 10").Find(&personnel).Error; err != nil {
+	if err := entity.DB().Preload("BloodType").Preload("Gender").Preload("JobTitle").Raw("SELECT * FROM personnels WHERE job_title_id = 7").Find(&personnel).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

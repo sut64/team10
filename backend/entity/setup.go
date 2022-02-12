@@ -65,11 +65,9 @@ func SetupDatabase() {
 	db.Model(&Disease{}).Create(&disease5)
 
 	medicine1 := Medicine{
-		Medname:     "ยาแก้ไข้",
+		Medname: "ยาแก้ไข้",
 	}
 	db.Model(&Medicine{}).Create(&medicine1)
-
-	
 
 	db.Model(&Medicine{}).Create(&Medicine{
 		Medname:     "ไม่มี",
@@ -103,9 +101,10 @@ func SetupDatabase() {
 		Price: 500,
 	})
 
-	db.Model(&Gender{}).Create(&Gender{
+	gender1 := Gender{
 		Genders: "ชาย",
-	})
+	}
+	db.Model(&Gender{}).Create(&gender1)
 	db.Model(&Gender{}).Create(&Gender{
 		Genders: "หญิง",
 	})
@@ -113,9 +112,11 @@ func SetupDatabase() {
 	db.Model(&BloodType{}).Create(&BloodType{
 		BloodType: "A",
 	})
-	db.Model(&BloodType{}).Create(&BloodType{
+	bloodtype2 := BloodType{
 		BloodType: "B",
-	})
+	}
+	db.Model(&BloodType{}).Create(&bloodtype2)
+
 	db.Model(&BloodType{}).Create(&BloodType{
 		BloodType: "AB",
 	})
@@ -141,6 +142,10 @@ func SetupDatabase() {
 	db.Model(&JobTitle{}).Create(&JobTitle{
 		Job: "เทคนิคการแพทย์",
 	})
+	jobtitle1 := JobTitle{
+		Job: "พนักงานเวชระเบียน",
+	}
+	db.Model(&JobTitle{}).Create(&jobtitle1)
 	db.Model(&JobTitle{}).Create(&JobTitle{
 		Job: "พนักงานบัญชี",
 	})
@@ -169,47 +174,115 @@ func SetupDatabase() {
 
 	// Province Data
 	province1 := Province{
-		Province: "นครราชสีมา",
+		Province: "กรุงเทพ",
 	}
 	db.Model(&Province{}).Create(&province1)
 
+	db.Model(&Province{}).Create([]map[string]interface{}{
+		{"Province": "กระบี่"},
+		{"Province": "กาญจนบุรี"},
+		{"Province": "กาฬสินธุ์"},
+		{"Province": "กำแพงเพชร"},
+		{"Province": "ขอนแก่น"},
+		{"Province": "จันทบุรี"},
+		{"Province": "ฉะเชิงเทรา"},
+		{"Province": "ชลบุรี"},
+		{"Province": "ชัยนาท"},
+		// 10
+		{"Province": "ชัยภูมิ"},
+		{"Province": "ชุมพร"},
+		{"Province": "เชียงราย"},
+		{"Province": "เชียงใหม่"},
+		{"Province": "ตรัง"},
+		{"Province": "ตราด"},
+		{"Province": "ตาก"},
+		{"Province": "นครนายก"},
+		{"Province": "นครปฐม"},
+		{"Province": "นครพนม"},
+		// 19
+	})
+
 	province2 := Province{
-		Province: "อุบลราชธานี",
+		Province: "นครราชสีมา",
 	}
 	db.Model(&Province{}).Create(&province2)
 
-	province3 := Province{
-		Province: "กรุงเทพ",
-	}
-	db.Model(&Province{}).Create(&province3)
-
-	// JobTitle Data
-	job1 := JobTitle{
-		Job: "พนักงานเวชระเบียน",
-	}
-	db.Model(&JobTitle{}).Create(&job1)
-
-	gender1 := Gender{
-		Genders: "ชาย",
-	}
-	db.Model(&Gender{}).Create(&gender1)
-
-	bloodtype2 := BloodType{
-		BloodType: "B",
-	}
-	db.Model(&BloodType{}).Create(&bloodtype2)
+	db.Model(&Province{}).Create([]map[string]interface{}{
+		{"Province": "นครศรีธรรมราช"},
+		{"Province": "นครสวรรค์"},
+		{"Province": "นนทบุรี"},
+		{"Province": "นราธิวาส"},
+		{"Province": "น่าน"},
+		{"Province": "บึงกาฬ"},
+		{"Province": "บุรีรัมย์"},
+		{"Province": "ปทุมธานี"},
+		{"Province": "ประจวบคีรีขันธ์"},
+		// 30
+		{"Province": "ปราจีนบุรี"},
+		{"Province": "ปัตตานี"},
+		{"Province": "พระนครศรีอยุธยา"},
+		{"Province": "พังงา"},
+		{"Province": "พัทลุง"},
+		{"Province": "พิจิตร"},
+		{"Province": "พิษณุโลก"},
+		{"Province": "เพชรบุรี"},
+		{"Province": "เพชรบูรณ์"},
+		{"Province": "แพร่"},
+		// 40
+		{"Province": "พะเยา"},
+		{"Province": "ภูเก็ต"},
+		{"Province": "มหาสารคาม"},
+		{"Province": "มุกดาหาร"},
+		{"Province": "แม่ฮ่องสอน"},
+		{"Province": "ยะลา"},
+		{"Province": "ยโสธร"},
+		{"Province": "ร้อยเอ็ด"},
+		{"Province": "ระนอง"},
+		{"Province": "ระยอง"},
+		// 50
+		{"Province": "ราชบุรี"},
+		{"Province": "ลพบุรี"},
+		{"Province": "ลำปาง"},
+		{"Province": "ลำพูน"},
+		{"Province": "เลย"},
+		{"Province": "ศรีสะเกษ"},
+		{"Province": "สกลนคร"},
+		{"Province": "สงขลา"},
+		{"Province": "สตูล"},
+		{"Province": "สมุทรปราการ"},
+		// 60
+		{"Province": "สมุทรสงคราม"},
+		{"Province": "สมุทรสาคร"},
+		{"Province": "สระแก้ว"},
+		{"Province": "สระบุรี"},
+		{"Province": "สิงห์บุรี"},
+		{"Province": "สุโขทัย"},
+		{"Province": "สุพรรณบุรี"},
+		{"Province": "สุราษฎร์ธานี"},
+		{"Province": "สุรินทร์"},
+		{"Province": "หนองคาย"},
+		// 70
+		{"Province": "หนองบัวลำภู"},
+		{"Province": "อ่างทอง"},
+		{"Province": "อุดรธานี"},
+		{"Province": "อุทัยธานี"},
+		{"Province": "อุตรดิตถ์"},
+		{"Province": "อุบลราชธานี"},
+		{"Province": "อำนาจเจริญ"},
+		// 77
+	})
 
 	// Personnel Data
 	personnel1 := Personnel{
 		Name:       "ขยัน อดทด",
-		Personalid: "ABABAB",
-		BirthDay:   time.Now(),
-		Tel:        "0555555555555",
-		Address:    "1111",
-		Salary:     20,
+		Personalid: "1104200227093",
+		BirthDay:   time.Date(1990, 7, 10, 0, 0, 0, 0, time.UTC),
+		Tel:        "0555555555",
+		Address:    "111 moo7",
+		Salary:     18000,
 		Gender:     gender1,
 		BloodType:  bloodtype2,
-		JobTitle:   job1,
+		JobTitle:   jobtitle1,
 	}
 
 	db.Model(&Personnel{}).Create(&personnel1)
@@ -222,7 +295,7 @@ func SetupDatabase() {
 		Gender:         gender1,
 		Idcardnumber:   "1234455678948",
 		Age:            25,
-		Birthday:       time.Now(),
+		Birthday:       time.Date(1999, 9, 9, 0, 0, 0, 0, time.UTC),
 		BloodType:      bloodtype2,
 		Phonenumber:    "0855555555",
 		Email:          "nakorn@test.com",
@@ -254,15 +327,14 @@ func SetupDatabase() {
 	}
 	db.Model(&Patientrecord{}).Create(&patientrecord1)
 
-
 	db.Model(&Treatmentrecord{}).Create(&Treatmentrecord{
 		Patientrecord: patientrecord1,
-		Disease: disease2,
-		Medicine: medicine1,
-		Treatment: "การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก",
-		Temperature: 32,
-		Personnel:   personnel1,
-		RecordDate:  time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
+		Disease:       disease2,
+		Medicine:      medicine1,
+		Treatment:     "การรักษาจึงเป็นเพียงการรักษาไปตามอาการเป็นสำคัญ กล่าวคือ ให้ยาลดไข้ เช็ดตัว ให้ดื่มน้ำมาก ๆ เพื่อป้องกันภาวะช็อก",
+		Temperature:   32,
+		Personnel:     personnel1,
+		RecordDate:    time.Date(2022, 12, 22, 0, 0, 0, 0, time.UTC),
 	})
 
 	// DrugAllergy Data
