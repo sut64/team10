@@ -64,10 +64,16 @@ func SetupDatabase() {
 	}
 	db.Model(&Disease{}).Create(&disease5)
 
-	medicine1 := Medicine{
-		Medname: "ยาแก้ไข้",
+	disease6 := Disease{
+		Diname: "ความดันโลหิตสูง",
 	}
-	db.Model(&Medicine{}).Create(&medicine1)
+	db.Model(&Disease{}).Create(&disease6)
+
+	disease7 := Disease{
+		Diname: "การติดเขื้อทางเดินอาหาร",
+	}
+	db.Model(&Disease{}).Create(&disease7)
+
 
 	db.Model(&Medicine{}).Create(&Medicine{
 		Medname:     "ไม่มี",
@@ -75,15 +81,45 @@ func SetupDatabase() {
 		Quantity:    "none",
 		Price:       0,
 	})
+
+	medicine1 := Medicine{
+		Medname:     "ยาแก้ไข้",
+		Description: "บรรเทาอาการปวดลดไข้",
+		Quantity:    "good",
+		Price:       120.00,
+	}
+	db.Model(&Medicine{}).Create(&medicine1)
+
+	db.Model(&Medicine{}).Create(&Medicine{
+		Medname:     "Metformin",
+		Description: "ยารักษาโรคเบาหวาน",
+		Quantity:    "good",
+		Price:       300.00,
+	})
+
+	db.Model(&Medicine{}).Create(&Medicine{
+		Medname:     "Clarityne",
+		Description: "ยาบรรเทาอาการแพ้ระบบทางเดินหายใจ",
+		Quantity:    "good",
+		Price:       200.00,
+	})
+
+	db.Model(&Medicine{}).Create(&Medicine{
+		Medname:     "Antacil Gel",
+		Description: "ยาบรรเทาอาการ แสบร้อนกลางอกเนื่องจากกรดไหลย้อน ลดกรด ลดแก๊ส เคลือบแผลในกระเพาะอาหาร ปวดท้อง ท้องอืด จุกเสียด แน่น อาหารไม่ย่อย",
+		Quantity:    "good",
+		Price:       65.00,
+	})
+
 	db.Model(&Medicine{}).Create(&Medicine{
 		Medname:     "Omepazole",
-		Description: "none",
+		Description: "เป็นยารักษาโรคกรดไหลย้อน โรคแผลเปื่อยเพปติก/แผลในกระเพาะอาหาร ",
 		Quantity:    "good",
 		Price:       275.50,
 	})
 	db.Model(&Medicine{}).Create(&Medicine{
-		Medname:     "ibupofen",
-		Description: "none",
+		Medname:     "Ibupofen",
+		Description: "บรรเทาอาการปวดประจำเดือน",
 		Quantity:    "good",
 		Price:       125.45,
 	})
