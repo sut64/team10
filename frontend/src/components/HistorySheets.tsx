@@ -121,7 +121,7 @@ function HistorySheet() {
                   <TableCell align="right"  size="medium"> {history_sheets.ID}                </TableCell>
                   <TableCell align="left"   size="medium"> {history_sheets.Personnel.Name}    </TableCell>
                   <TableCell align="left"   size="medium"> {history_sheets.Patientrecord.Firstname} {history_sheets.Patientrecord.Lastname}</TableCell>
-                  <TableCell align="left"   size="medium"> {history_sheets.DrugAllergy.DName} </TableCell>
+                  <TableCell align="left"   size="medium"> {history_sheets.DrugAllergy.Name} </TableCell>
                   <TableCell align="right"  size="medium"> {history_sheets.Weight}            </TableCell>
                   <TableCell align="right"  size="medium"> {history_sheets.Height}            </TableCell>
                   <TableCell align="right"  size="medium"> {history_sheets.Temperature}       </TableCell>

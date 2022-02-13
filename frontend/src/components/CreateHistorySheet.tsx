@@ -286,7 +286,7 @@ return (
                 </option>
                 {drugallergy.map((item: DrugAllergyInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.DName}
+                    {item.Name} : {item.Symptom}
                   </option>
                 ))}
               </Select>
