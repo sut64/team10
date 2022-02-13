@@ -1,7 +1,7 @@
 export interface DrugAllergyInterface {
 
     ID : number
-    DName   : string
+    Name   : string
 	Symptom : string     
 
     }
