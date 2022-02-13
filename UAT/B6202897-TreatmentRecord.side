@@ -695,28 +695,101 @@
     "id": "a91828f4-6187-47b9-ac66-b25da3415bc7",
     "name": "B6202897- ข้อมูลอุณหภูมิต้องมีค่าอยู่ระหว่าง 32 - 40",
     "commands": [{
-      "id": "5ed09476-6020-4469-baf3-20d999023844",
+      "id": "20502dee-a538-4056-9168-ac3e5b30b12c",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/CreateTreatmentRecord",
       "targets": [],
       "value": ""
     }, {
-      "id": "2a1b8eb6-c062-445a-a359-8916acf9e46d",
+      "id": "515296d6-893c-42df-96ad-65436b287a3e",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1536x824",
+      "target": "1538x824",
       "targets": [],
       "value": ""
     }, {
-      "id": "b2c22878-0652-464f-b4bc-a691dcd18a37",
+      "id": "2974efd5-4972-4aab-ba65-0b5c61bcbd8d",
+      "comment": "",
+      "command": "click",
+      "target": "name=PatientrecordID",
+      "targets": [
+        ["name=PatientrecordID", "name"],
+        ["css=.makeStyles-label-12 > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='PatientrecordID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21bb76d0-7532-4e4c-b9a9-404b8d9450b5",
       "comment": "",
       "command": "select",
       "target": "name=PatientrecordID",
       "targets": [],
       "value": "label=นคร ศรีสรรณ์"
     }, {
-      "id": "51bed781-e7b5-418f-ac54-47fd0fb1b54e",
+      "id": "52f4629d-b713-45f8-974b-7c3e7e0de818",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d23dfeb3-8fe5-43c3-bb67-e94292819d41",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bdf9b355-1aa4-43cf-8394-36ecded825bc",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "95697068-55d6-4686-a1d6-a9152acd22e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label", "css:finder"],
+        ["xpath=//div[5]/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'27')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "630bd7c2-8ef3-49fa-a4f8-e1c048658d54",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24978127-e8a0-461c-a784-1a5d6b57bfd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d11db410-ad63-463d-90d8-894220141f29",
       "comment": "",
       "command": "click",
       "target": "name=DiseaseID",
@@ -729,14 +802,25 @@
       ],
       "value": ""
     }, {
-      "id": "04a801a5-6f52-4175-ac66-210d88b0ffae",
+      "id": "2cd39705-5f9b-4e4e-b29d-d5cf839571b0",
       "comment": "",
       "command": "select",
       "target": "name=DiseaseID",
       "targets": [],
-      "value": "label=ไข้เลือดออก"
+      "value": "label=โรคเบาหวาน"
     }, {
-      "id": "037eca10-034b-46ef-82b4-fc08542a3f68",
+      "id": "d2070882-d0ab-4751-baa6-8b7f20dfe79a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-grid-xs-12",
+      "targets": [
+        ["css=.MuiGrid-grid-xs-12", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[5]", "xpath:idRelative"],
+        ["xpath=//div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0df9d1ba-95bb-477f-a64e-30ff9d192827",
       "comment": "",
       "command": "click",
       "target": "name=MedicineID",
@@ -749,85 +833,14 @@
       ],
       "value": ""
     }, {
-      "id": "b6c4a352-3842-4ab9-b1e2-45de10dec9f7",
+      "id": "b28d22e4-1e2e-4e06-9c41-4d669272e833",
       "comment": "",
       "command": "select",
       "target": "name=MedicineID",
       "targets": [],
-      "value": "label=ibupofen"
+      "value": "label=Metformin"
     }, {
-      "id": "bf2a6066-45f8-45cc-a2be-33cbdf971db7",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "9128c755-4000-4016-8fe4-66c561f06c37",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "086cecb7-26e0-431d-8a88-af49492a1d8a",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "a46fd77b-eda5-4c7a-8dd8-44812da24bd9",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label", "css:finder"],
-        ["xpath=//div[5]/div/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'27')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "7c0bb002-feb9-47e6-8519-104a412a0573",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(1) .MuiIconButton-label", "css:finder"],
-        ["xpath=//div[5]/div/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'27')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "b112a9fe-dc64-425d-8fb9-8372bab40f1a",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "c21a6007-da2a-46eb-9ecb-e2137f7c261f",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "4bcc071a-c6d4-4a38-873e-e0f36aa686d7",
+      "id": "c89a87fb-e403-481e-a773-b42cab9613fa",
       "comment": "",
       "command": "click",
       "target": "id=Treatment",
@@ -840,7 +853,7 @@
       ],
       "value": ""
     }, {
-      "id": "718cdfab-4076-40f0-81f3-6663d620f74b",
+      "id": "41248059-81c3-43a6-9622-fd524b0b9746",
       "comment": "",
       "command": "type",
       "target": "id=Treatment",
@@ -853,7 +866,7 @@
       ],
       "value": "test"
     }, {
-      "id": "9e7c51b7-2a87-4a97-b451-e1e6a15479bb",
+      "id": "3acbeb2d-8ce7-4807-9dde-717fef6f8d71",
       "comment": "",
       "command": "click",
       "target": "name=PersonnelID",
@@ -866,14 +879,27 @@
       ],
       "value": ""
     }, {
-      "id": "2007a052-f145-4163-9e2b-436e3d274331",
+      "id": "fc949342-f1c9-41e0-93c4-48fe8fa6befc",
       "comment": "",
       "command": "select",
       "target": "name=PersonnelID",
       "targets": [],
       "value": "label=ขยัน อดทด"
     }, {
-      "id": "7d2f3a66-9efd-4919-adfe-972e2e77da2a",
+      "id": "5f8f8a8d-568d-4b43-84e5-40d7180d5b40",
+      "comment": "",
+      "command": "click",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06ebb049-94f2-4134-8f59-063883c2eefd",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.submit > .MuiButton-label",
@@ -884,7 +910,20 @@
       ],
       "value": ""
     }, {
-      "id": "18289c1d-812a-4b6d-91bc-c9efaf4dde7d",
+      "id": "8260134d-446b-4356-bf64-738d2787706d",
+      "comment": "",
+      "command": "type",
+      "target": "id=Temperature",
+      "targets": [
+        ["id=Temperature", "id"],
+        ["css=#Temperature", "css:finder"],
+        ["xpath=//input[@id='Temperature']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/div[2]/div[7]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "f3688f5e-b8fc-43a8-800f-2b73102cae73",
       "comment": "",
       "command": "click",
       "target": "css=.submit > .MuiButton-label",
@@ -895,7 +934,7 @@
       ],
       "value": ""
     }, {
-      "id": "d2f3cc39-b166-474c-a9ba-326844f61873",
+      "id": "ffd34c87-4af3-4de7-bf48-03b47ea29cd5",
       "comment": "",
       "command": "mouseOut",
       "target": "css=.submit > .MuiButton-label",
@@ -906,18 +945,18 @@
       ],
       "value": ""
     }, {
-      "id": "86d4a49e-fb6b-48dc-9d90-656fba012825",
+      "id": "33c000c1-4413-46a1-b8bf-004b0b46448d",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiAlert-message",
+      "target": "css=.MuiAlert-root",
       "targets": [
-        ["css=.MuiAlert-message", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div/div[2]", "xpath:position"]
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "973b4abe-14fd-4b88-8ff6-2dd6d799fddf",
+      "id": "1e24b35e-ed5a-4fe8-8da9-6318b24471e6",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
