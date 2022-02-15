@@ -47,6 +47,7 @@ function HistorySheetCreate() {
 
  const [success, setSuccess] = useState(false);
  const [error, setError] = useState(false);
+ const [errorMessage, setErrorMessage] = useState("");
 
  const apiUrl = "http://localhost:8080";
  const requestOptions = {
@@ -188,9 +189,11 @@ function submit() {
         if (res.data) {
           console.log("บันทึกได้")
           setSuccess(true);
+          setErrorMessage("")
         } else {
           console.log("บันทึกผิดพลาด")
           setError(true);
+          setErrorMessage(res.error)
         }
       });
 }
@@ -204,7 +207,7 @@ return (
     </Snackbar>
     <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
       <Alert onClose={handleClose} severity="error">
-        บันทึกข้อมูลผิดพลาด
+        บันทึกข้อมูลผิดพลาด : {errorMessage}
       </Alert>
     </Snackbar>
     <Paper className={classes.paper}>
