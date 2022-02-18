@@ -283,6 +283,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกชื่อ"
                 value={patientrecord.Firstname || ""}
                 onChange={handleInputChange}
               />
@@ -297,6 +298,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกนามสกุล"
                 value={patientrecord.Lastname || ""}
                 onChange={handleInputChange}
               />
@@ -328,13 +330,14 @@ function PatientrecordCreate() {
 
 
           <Grid item xs={6}>
-            <p>Idcardnumber</p>
+            <p>เลขประจำตัวประชาชน</p>
             <FormControl fullWidth variant="outlined">
               <TextField
                 id="Idcardnumber"
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกเลขประจำตัวประชาชน"
                 value={patientrecord.Idcardnumber || ""}
                 onChange={handleInputChange}
               />
@@ -349,6 +352,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="number"
                 size="medium"
+                placeholder="กรุณากรอกอายุ"
                 InputProps={{ inputProps: { min: 1 } }}
                 InputLabelProps={{
                   shrink: true,
@@ -409,6 +413,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกหมายเลขโทรศัพท์มือถือ"
                 value={patientrecord.Phonenumber || ""}
                 onChange={handleInputChange}
               />
@@ -423,6 +428,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกอีเมล"
                 value={patientrecord.Email || ""}
                 onChange={handleInputChange}
               />
@@ -437,6 +443,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกที่อยู่"
                 value={patientrecord.Home || ""}
                 onChange={handleInputChange}
               />
@@ -474,6 +481,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกชื่อติดต่อฉุกเฉิน"
                 value={patientrecord.Emergencyname || ""}
                 onChange={handleInputChange}
               />
@@ -488,6 +496,7 @@ function PatientrecordCreate() {
                 variant="outlined"
                 type="string"
                 size="medium"
+                placeholder="กรุณากรอกหมายเลขติดต่อฉุกเฉิน"
                 value={patientrecord.Emergencyphone || ""}
                 onChange={handleInputChange}
               />
