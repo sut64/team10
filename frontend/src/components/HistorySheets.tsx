@@ -71,7 +71,7 @@ function HistorySheet() {
           <Box>
             <Button
               component={RouterLink}
-              to="/HistorySheetCreate"
+              to="/CreateHistorySheet"
               variant="contained"
               color="primary"
             >
