@@ -295,6 +295,28 @@
         ["xpath=//div[2]/div/div/div", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "71a9f11f-5dc1-4094-8122-a5bb6d487752",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e8d66ec-ba5e-4fd0-94cb-e84f2e267b90",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
     }]
   }, {
     "id": "c716b8f8-b236-4c8d-83b6-41ab12369101",
