@@ -224,7 +224,7 @@ function CreateBill() {
                 }}
               >
                 <option aria-label="None" value="">
-                  กรุณาเลือก
+                  กรุณาเลือกชื่อผู้ป่วย
                 </option>
                 {records.map((item: PatientrecordInterface) => (
                   <option value={item.ID} key={item.ID}>
@@ -286,7 +286,7 @@ function CreateBill() {
                 variant ="outlined"
                 type="number"
                 size="medium"
-                placeholder="กรุณากรอกข้อมูลชื่อ"
+                placeholder="กรุณากรอกจำนวนรายการ"
                 value={bills.Listofbill}
                 onChange={handleInputChange}
               />
