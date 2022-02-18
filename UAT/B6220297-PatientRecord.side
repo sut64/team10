@@ -14,13 +14,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "5da55e46-ac2e-4ff2-9256-9d6693c40b50",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1588x977",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "78f13ab6-f974-4546-b547-ea53ca85b716",
       "comment": "",
       "command": "mouseOver",
@@ -553,13 +546,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "8a3bd929-01f9-4f8f-8a34-3f6a45944812",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1474x954",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "76c750a6-31c2-4b24-83b6-e55a00fcefc7",
       "comment": "",
       "command": "mouseOver",
@@ -1039,13 +1025,6 @@
       "comment": "",
       "command": "open",
       "target": "/",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1292f4cb-1ab9-425e-83bf-a0494281ff25",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1530x958",
       "targets": [],
       "value": ""
     }, {
@@ -1564,13 +1543,6 @@
       "comment": "",
       "command": "open",
       "target": "/",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c60529b2-eeff-4f2c-bc6c-c5d015fdc7aa",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1566x952",
       "targets": [],
       "value": ""
     }, {
