@@ -68,6 +68,7 @@ func main() {
 	r.POST("/appointments", controller.CreateAppointment)       //create
 	r.PATCH("/appointments", controller.UpdateAppointment)      //update
 	r.DELETE("/appointments/:id", controller.DeleteAppointment) //delete
+	r.GET("/personnels_appoint", controller.ListPersonnel_appoint) //personnel_appoint
 
 	// DrugAllergy Routes
 	r.GET("/drugallergys", controller.ListDrugAllergys)

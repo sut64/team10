@@ -79,6 +79,16 @@ func ListPersonnelPatientRecord(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": personnel})
 }
 
+func ListPersonnel_appoint(c *gin.Context) {
+	var personnel []entity.Personnel
+	if err := entity.DB().Preload("BloodType").Preload("Gender").Preload("JobTitle").Raw("SELECT * FROM personnels WHERE job = 'หมอ' OR job = 'พยาบาล' OR job = 'พนักงานเวชระเบียน'").Find(&personnel).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": personnel})
+}
+
 func GetPersonnel(c *gin.Context) {
 	var personnel entity.Personnel
 	id := c.Param("id")
