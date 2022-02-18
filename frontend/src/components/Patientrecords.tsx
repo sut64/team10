@@ -84,49 +84,49 @@ function Patientrecords() {
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left" width="3%">
+                                <TableCell align="left" width="2%">
                                     ลำดับ
                                 </TableCell>
                                 <TableCell align="left" width="5%">
                                     หน้าชื่อ
                                 </TableCell>
-                                <TableCell align="left" width="5%">
+                                <TableCell align="left" width="6%">
                                     ชื่อ
                                 </TableCell>
-                                <TableCell align="left" width="5%">
+                                <TableCell align="left" width="6%">
                                     นามสกุล
                                 </TableCell>
-                                <TableCell align="left" width="4%">
+                                <TableCell align="left" width="3%">
                                     เพศ
                                 </TableCell>
-                                <TableCell align="left" width="10%">
+                                <TableCell align="left" width="11%">
                                     เลขประจำตัวประชาชน
                                 </TableCell>
-                                <TableCell align="left" width="3%">
+                                <TableCell align="left" width="2%">
                                     อายุ
                                 </TableCell>
-                                <TableCell align="left" width="9%">
+                                <TableCell align="left" width="11%">
                                     วันเกิด
                                 </TableCell>
-                                <TableCell align="left" width="6%">
+                                <TableCell align="center" width="6%">
                                     กรุ๊ปเลือด
                                 </TableCell>
-                                <TableCell align="left" width="5%">
+                                <TableCell align="left" width="4%">
                                     Tel.
                                 </TableCell>
                                 <TableCell align="left" width="5%">
                                     Email
                                 </TableCell>
-                                <TableCell align="left" width="16%">
+                                <TableCell align="left" width="14%">
                                     ที่อยู่
                                 </TableCell>
                                 <TableCell align="left" width="5%">
                                     จังหวัด
                                 </TableCell>
-                                <TableCell align="left" width="9%">
-                                    Timestamp
+                                <TableCell align="left" width="10%">
+                                    เวลาที่ลงทะเบียน
                                 </TableCell>
-                                <TableCell align="left" width="9%">
+                                <TableCell align="center" width="10%">
                                     พนักงานทีรับลงทะเบียน
                                 </TableCell>
                             </TableRow>
@@ -141,14 +141,12 @@ function Patientrecords() {
                                     <TableCell align="left">{item.Gender.Genders}</TableCell>
                                     <TableCell align="left">{item.Idcardnumber}</TableCell>
                                     <TableCell align="left">{item.Age}</TableCell>
-                                    
                                     <TableCell align="left">{format((new Date(item.Birthday)), 'dd MMMM yyyy')}</TableCell>
-                                    <TableCell align="left">{item.BloodType.BloodType}</TableCell>
+                                    <TableCell align="center">{item.BloodType.BloodType}</TableCell>
                                     <TableCell align="left">{item.Phonenumber}</TableCell>
                                     <TableCell align="left">{item.Email}</TableCell>
                                     <TableCell align="left">{item.Home}</TableCell>
                                     <TableCell align="left">{item.Province.Province}</TableCell>
-                                    
                                     <TableCell align="left">{format((new Date(item.Timestamp)), 'dd MMMM yyyy hh:mm a')}</TableCell>
                                     <TableCell align="left">{item.Personnel.Name}</TableCell>
                                 </TableRow>
