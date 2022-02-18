@@ -86,7 +86,7 @@ const handleChange = (
 };
 
  const getPersonnels = async () => {
-  fetch(`${apiUrl}/personnels_appoint`, requestOptions)
+  fetch(`${apiUrl}/personnels`, requestOptions)
     .then((response) => response.json())
     .then((res) => {
       if (res.data) {
